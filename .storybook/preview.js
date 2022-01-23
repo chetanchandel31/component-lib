@@ -1,16 +1,5 @@
-import React from 'react';
-import { GlobalStyles } from '../src/config/global.styles';
-
-// Global decorator to apply the styles to all stories
-export const decorators = [
-  Story => (
-    <>
-      <GlobalStyles />
-      <Story />
-    </>
-  ),
-];
-
+// https://storybook.js.org/docs/react/writing-stories/parameters#global-parameters
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-}
+  // https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args
+  actions: { argTypesRegex: '^on.*' },
+};
