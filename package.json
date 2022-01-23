@@ -30,7 +30,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "component-library-tsdx",
+  "name": "haki-ui",
   "author": "chetan chandel",
   "module": "dist/component-library-tsdx.esm.js",
   "size-limit": [
