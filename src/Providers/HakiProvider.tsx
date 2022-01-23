@@ -1,20 +1,12 @@
 import React, { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./global.styles";
+import { defaultTheme } from "./theme";
 
-type HakiProviderProps = {
+interface HakiProviderProps {
   children: ReactNode;
   theme?: Object; // TODO: change
-};
-
-export const defaultTheme = {
-  primary: {
-    main: "#ffffff",
-  },
-  secondary: {},
-  danger: {},
-  warning: {},
-};
+}
 
 /** applies global styles and ability to customize theme for haki components*/
 export const HakiProvider = (props: HakiProviderProps) => {

@@ -1,13 +1,25 @@
-import React, { FC, ReactNode } from "react";
+import React, {
+  forwardRef,
+  ReactNode,
+  // RefObject,
+} from "react";
+import { Sizes } from "../../types/types";
 import { StyledButton } from "./styled";
 
 export interface ButtonProps {
   children: ReactNode;
-  color?: string;
+  size: Sizes;
 }
 
-export const Button: FC<ButtonProps> = ({ children, color }) => {
-  return (
-    <StyledButton style={{ color: color || "black" }}>{children}</StyledButton>
-  );
+export const Button = (props: ButtonProps) => {
+  const { children, size } = props;
+  console.log(size);
+
+  return <StyledButton>{children}</StyledButton>;
 };
+
+export const ButtonTwo = forwardRef(
+  (_props: { size: "lg" | "md" }, ref: any) => {
+    return <button ref={ref}>2</button>;
+  }
+);
