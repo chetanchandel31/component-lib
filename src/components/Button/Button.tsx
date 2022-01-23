@@ -1,25 +1,46 @@
-import React, {
-  forwardRef,
-  ReactNode,
-  // RefObject,
-} from "react";
-import { Sizes } from "../../types/types";
+import React, { CSSProperties, MouseEventHandler, ReactNode } from "react";
+import { Colors, Sizes } from "../../types/types";
 import { StyledButton } from "./styled";
 
-export interface ButtonProps {
+type BaseButtonProps = {
   children: ReactNode;
-  size: Sizes;
-}
-
-export const Button = (props: ButtonProps) => {
-  const { children, size } = props;
-  console.log(size);
-
-  return <StyledButton>{children}</StyledButton>;
+  style?: CSSProperties;
+  className?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 };
 
-export const ButtonTwo = forwardRef(
-  (_props: { size: "lg" | "md" }, ref: any) => {
-    return <button ref={ref}>2</button>;
-  }
-);
+export type ButtonProps = {
+  size: Sizes;
+  color?: Colors;
+  fontColor?: string;
+  isLoading?: boolean;
+} & BaseButtonProps;
+
+export const Button = (props: ButtonProps) => {
+  const {
+    children,
+    color = "primary",
+    fontColor = "white",
+    size,
+    style,
+    className,
+    onClick,
+    disabled,
+    isLoading,
+  } = props;
+
+  return (
+    <StyledButton
+      className={className}
+      style={style}
+      onClick={onClick}
+      size={size}
+      color={color}
+      fontColor={fontColor}
+      disabled={disabled || isLoading}
+    >
+      {children}
+    </StyledButton>
+  );
+};

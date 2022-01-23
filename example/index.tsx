@@ -1,20 +1,19 @@
 import "react-app-polyfill/ie11";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Button, HakiProvider, Thing, ButtonTwo } from "../.";
-import { useRef } from "react";
-import { MutableRefObject } from "react";
+import { Button, HakiProvider, Thing } from "../.";
 
 const App = () => {
-  const ref: any = useRef();
-
   return (
-    <HakiProvider>
+    <>
+      {/* <HakiProvider theme={{ primary: "blue" }}> */}
       <Thing />
-      <ButtonTwo />
-      <Button size="lg">hi</Button>
-      {/* <Butto color="blue">zz</Button> */}
-    </HakiProvider>
+      {/* <ButtonTwo size="l" /> */}
+      <Button size="lg" color="primary" className="asas">
+        hi
+      </Button>
+      {/* </HakiProvider> */}
+    </>
   );
 };
 

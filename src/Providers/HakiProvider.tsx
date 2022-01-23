@@ -1,18 +1,18 @@
 import React, { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./global.styles";
-import { defaultTheme } from "./theme";
+import { defaultTheme, getFinalTheme, Theme, UserEditableTheme } from "./theme";
 
 interface HakiProviderProps {
   children: ReactNode;
-  theme?: Object; // TODO: change
+  theme?: UserEditableTheme;
 }
 
 /** applies global styles and ability to customize theme for haki components*/
 export const HakiProvider = (props: HakiProviderProps) => {
   const { children, theme } = props;
 
-  const finalTheme = { ...defaultTheme, theme };
+  const finalTheme: Theme = getFinalTheme(theme, defaultTheme);
 
   return (
     <ThemeProvider theme={finalTheme}>
