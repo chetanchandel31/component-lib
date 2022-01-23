@@ -1,6 +1,5 @@
 {
   "version": "0.0.3",
-  "private": false,
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -32,14 +31,14 @@
   },
   "name": "haki-ui",
   "author": "chetan chandel",
-  "module": "dist/component-library-tsdx.esm.js",
+  "module": "dist/haki-ui.esm.js",
   "size-limit": [
     {
-      "path": "dist/component-library-tsdx.cjs.production.min.js",
+      "path": "dist/haki-ui.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/component-library-tsdx.esm.js",
+      "path": "dist/haki-ui.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -53,16 +52,16 @@
     "@storybook/react": "^6.4.14",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.21",
     "babel-loader": "^8.2.3",
     "husky": "^7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
     "size-limit": "^7.0.5",
+    "styled-components": "^5.3.3",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.5",
-    "@types/styled-components": "^5.1.21",
-    "styled-components": "^5.3.3"
+    "typescript": "^4.5.5"
   }
 }
