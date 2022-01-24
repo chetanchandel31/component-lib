@@ -2,6 +2,8 @@ import React, { CSSProperties, MouseEventHandler, ReactNode } from "react";
 import { Colors, Sizes } from "../../types/types";
 import { StyledButton } from "./styled";
 
+export type ButtonVariants = "filled" | "ghost" | "outlined";
+
 type BaseButtonProps = {
   children: ReactNode;
   style?: CSSProperties;
@@ -10,24 +12,28 @@ type BaseButtonProps = {
   disabled?: boolean;
 };
 
-export type ButtonProps = {
+type HakiButtonProps = {
   size: Sizes;
   color?: Colors;
-  fontColor?: string;
+  variant?: ButtonVariants;
   isLoading?: boolean;
-} & BaseButtonProps;
+};
+
+export type ButtonProps = BaseButtonProps & HakiButtonProps;
+// DOMAttributes<HTMLButtonElement>;
 
 export const Button = (props: ButtonProps) => {
   const {
     children,
     color = "primary",
-    fontColor = "white",
-    size,
+    size = "md",
     style,
     className,
     onClick,
     disabled,
     isLoading,
+    variant = "filled",
+    ...restProps
   } = props;
 
   return (
@@ -37,8 +43,9 @@ export const Button = (props: ButtonProps) => {
       onClick={onClick}
       size={size}
       color={color}
-      fontColor={fontColor}
+      variant={variant}
       disabled={disabled || isLoading}
+      {...restProps}
     >
       {children}
     </StyledButton>
