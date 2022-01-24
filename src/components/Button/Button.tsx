@@ -5,6 +5,7 @@ import { StyledButton } from "./styled";
 export type ButtonVariants = "filled" | "ghost" | "outlined";
 
 type BaseButtonProps = {
+  /** any string or valid react child  */
   children: ReactNode;
   style?: CSSProperties;
   className?: string;
@@ -13,7 +14,7 @@ type BaseButtonProps = {
 };
 
 type HakiButtonProps = {
-  size: Sizes;
+  size?: Sizes;
   color?: Colors;
   variant?: ButtonVariants;
   isLoading?: boolean;
@@ -22,20 +23,18 @@ type HakiButtonProps = {
 export type ButtonProps = BaseButtonProps & HakiButtonProps;
 // DOMAttributes<HTMLButtonElement>;
 
-export const Button = (props: ButtonProps) => {
-  const {
-    children,
-    color = "primary",
-    size = "md",
-    style,
-    className,
-    onClick,
-    disabled,
-    isLoading,
-    variant = "filled",
-    ...restProps
-  } = props;
-
+export const Button = ({
+  children,
+  color = "primary",
+  size = "md",
+  style,
+  className,
+  onClick,
+  disabled,
+  isLoading,
+  variant = "filled",
+  ...restProps
+}: ButtonProps) => {
   return (
     <StyledButton
       className={className}

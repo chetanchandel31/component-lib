@@ -11,14 +11,36 @@ export default meta;
 
 const Template: Story<ButtonProps> = (args) => (
   <HakiProvider>
-    <Button {...args}></Button>
+    <Button {...args} />
   </HakiProvider>
 );
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
 Default.args = {
-  children: "bb",
+  children: "click me",
+};
+
+export const Danger = Template.bind({});
+
+Danger.args = {
+  children: "click me",
+  color: "danger",
+};
+
+export const SmallOutlined = Template.bind({});
+
+SmallOutlined.args = {
+  children: "click me",
+  variant: "outlined",
+  size: "sm",
+};
+
+export const GhostExtraLarge = Template.bind({});
+
+GhostExtraLarge.args = {
+  children: "click me",
+  variant: "ghost",
+  size: "xl",
+  color: "secondary",
 };
