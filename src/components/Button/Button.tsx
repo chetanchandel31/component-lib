@@ -23,6 +23,7 @@ type HakiButtonProps = {
 export type ButtonProps = BaseButtonProps & HakiButtonProps;
 // DOMAttributes<HTMLButtonElement>;
 
+/** Buttons allow users to take actions, and make choices, with a single tap.  */
 export const Button = ({
   children,
   color = "primary",
@@ -30,8 +31,8 @@ export const Button = ({
   style,
   className,
   onClick,
-  disabled,
-  isLoading,
+  disabled = false,
+  isLoading = false,
   variant = "filled",
   ...restProps
 }: ButtonProps) => {

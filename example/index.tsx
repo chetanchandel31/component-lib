@@ -1,7 +1,7 @@
 import "react-app-polyfill/ie11";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Button, HakiProvider, Thing } from "../.";
+import { Badge, Button, HakiProvider, Thing } from "../.";
 import "./styles.css";
 
 const App = () => {
@@ -19,6 +19,12 @@ const App = () => {
         >
           hello
         </Button>
+
+        <Badge color="secondary" variant="dot">
+          <Button size="md" color="primary" className="demo" variant="outlined">
+            hello
+          </Button>
+        </Badge>
       </HakiProvider>
     </>
   );
