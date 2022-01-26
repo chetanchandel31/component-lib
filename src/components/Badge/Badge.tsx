@@ -4,6 +4,12 @@ import { StyledBadgeContainer, StyledContainer } from "./styled";
 
 export type BadgeVariant = "standard" | "dot";
 
+export type BadgePosition =
+  | "top-right"
+  | "top-left"
+  | "bottom-right"
+  | "bottom-left";
+
 type BaseBadgeProps = {
   /** the badge will be added relative to this element  */
   children: ReactNode;
@@ -14,6 +20,7 @@ type BaseBadgeProps = {
 export type HakiBadgeProps = {
   /** any valid react child, preferably a small string or number */
   badgeContent?: ReactNode;
+  badgePosition?: BadgePosition;
   /** dot variant can be used as a notification that something has changed without giving a count */
   variant?: BadgeVariant;
   color?: Colors;
@@ -26,6 +33,7 @@ export type HakiBadgeProps = {
 export const Badge = ({
   children,
   badgeContent,
+  badgePosition = "top-right",
   showZero = false,
   invisible = false,
   color = "primary",
@@ -50,6 +58,7 @@ export const Badge = ({
             style={style}
             color={color}
             variant={variant}
+            badgePosition={badgePosition}
           >
             {variant === "standard" && badgeContent}
           </StyledBadgeContainer>
