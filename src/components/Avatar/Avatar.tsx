@@ -12,6 +12,7 @@ export type HakiAvatarProps = {
   size?: number;
 };
 
+/** Image avatars can be created by passing `src` and `alt` props. Any string passed as children will be used as fallback. In absence of `children`, first alphabet of `alt` will be used as fallback. */
 export const Avatar = ({
   children,
   alt,

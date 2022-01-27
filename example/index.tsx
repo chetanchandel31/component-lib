@@ -47,7 +47,9 @@ const App = () => {
               alt="abracadabra"
               // size={90}
               variant="circular"
-            />
+            >
+              z
+            </Avatar>
           </Badge>
           <button>hi</button>
           <button>hi</button>
