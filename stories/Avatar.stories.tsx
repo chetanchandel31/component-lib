@@ -33,8 +33,8 @@ LetterAvatar.args = {
 export const CustomColoredLetterAvatar = Template.bind({});
 
 CustomColoredLetterAvatar.args = {
-  src: "",
-  alt: "",
+  src: "/broken-path/broken-image.jpg",
+  alt: "broken image",
   children: "GG",
   bgColor: "#673ab7",
 };

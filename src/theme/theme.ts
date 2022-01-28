@@ -3,14 +3,18 @@ export type Sizes = "sm" | "md" | "lg" | "xl";
 // colors
 export type Colors = "primary" | "secondary" | "warning" | "danger";
 
-interface Color {
+type Color = {
   main: string;
   light: string;
   dark: string;
   contrastText: string;
-}
+};
 
-export const defaultColors: { [key in Colors]: Color } = {
+type ColorPalette = {
+  [key in Colors]: Color;
+} & { disabled: Color };
+
+export const defaultColors: ColorPalette = {
   primary: {
     main: "#6C63FF",
     light: "#ebeaff",
@@ -35,6 +39,12 @@ export const defaultColors: { [key in Colors]: Color } = {
     dark: "#f57f18",
     contrastText: "#fff",
   },
+  disabled: {
+    main: "rgba(0, 0, 0, 0.26)",
+    light: "rgba(0, 0, 0, 0.12)",
+    dark: "rgba(0, 0, 0, 0.5)",
+    contrastText: "#fff",
+  },
 };
 
 // theme object
@@ -51,17 +61,20 @@ export type UserEditableTheme = {
   warning?: Color;
 };
 
+/** customize default theme using user entered values */
 export const getFinalTheme = (
   userEditableTheme: UserEditableTheme | undefined,
   defaultTheme: Theme
 ) => {
   // TODO: better way of customising theme?
-  if (userEditableTheme?.primary)
-    defaultTheme.colors.primary = userEditableTheme.primary;
-  if (userEditableTheme?.secondary)
-    defaultTheme.colors.secondary = userEditableTheme.secondary;
-  if (userEditableTheme?.danger)
-    defaultTheme.colors.danger = userEditableTheme.danger;
+  const modifiedTheme = { ...defaultTheme };
 
-  return defaultTheme;
+  if (userEditableTheme?.primary)
+    modifiedTheme.colors.primary = userEditableTheme.primary;
+  if (userEditableTheme?.secondary)
+    modifiedTheme.colors.secondary = userEditableTheme.secondary;
+  if (userEditableTheme?.danger)
+    modifiedTheme.colors.danger = userEditableTheme.danger;
+
+  return modifiedTheme;
 };

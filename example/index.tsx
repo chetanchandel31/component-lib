@@ -15,7 +15,19 @@ const App = () => {
           size="md"
           color="primary"
           className="demo"
-          variant="outlined"
+          variant="filled"
+          disabled
+        >
+          hello
+        </Button>
+
+        <Button
+          style={{ marginLeft: "8px" }}
+          size="md"
+          color="primary"
+          className="demo"
+          variant="ghost"
+          disabled
         >
           hello
         </Button>

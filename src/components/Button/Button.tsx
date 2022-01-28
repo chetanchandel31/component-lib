@@ -23,7 +23,9 @@ type HakiButtonProps = {
 export type ButtonProps = BaseButtonProps & HakiButtonProps;
 // DOMAttributes<HTMLButtonElement>;
 
-// TODO: disabled and loading and icon button and FAB
+// TODO: icon button and FAB
+// loading will be same as disabled but with loader and optional loading text
+// `as` prop for react router
 
 /** Buttons allow users to take actions, and make choices, with a single tap.  */
 export const Button = ({

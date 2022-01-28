@@ -8,10 +8,10 @@ import {
   UserEditableTheme,
 } from "../theme/theme";
 
-interface HakiProviderProps {
+type HakiProviderProps = {
   children: ReactNode;
   theme?: UserEditableTheme;
-}
+};
 
 /** applies global styles and ability to customize theme for haki components*/
 export const HakiProvider = (props: HakiProviderProps) => {

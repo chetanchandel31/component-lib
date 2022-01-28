@@ -7,6 +7,7 @@ type StyledButtonProps = {
   size: Sizes;
   color: Colors;
   variant: ButtonVariants;
+  disabled: boolean;
 };
 
 // helpers
@@ -29,6 +30,36 @@ const getColors = (props: ThemedStyledProps<StyledButtonProps, any>) => {
     color: ${colors[props.color].main};
     &:hover {
       background-color: ${colors[props.color].light};
+    }
+  `;
+};
+
+const getLoadingAndDisabledColors = (
+  props: ThemedStyledProps<StyledButtonProps, any>
+) => {
+  const theme: Theme = props.theme;
+  const colors = theme.colors || defaultColors;
+
+  if (!props.disabled) return "";
+
+  if (props.variant === "filled") {
+    return `
+    color: ${colors.disabled.main};
+    background-color: ${colors.disabled.light};
+    cursor: not-allowed;
+    &:hover {
+      background-color: ${colors.disabled.light};
+    }
+  `;
+  }
+
+  return `
+    background-color: ${colors.disabled.contrastText};
+    color: ${colors.disabled.main};
+    border-color: ${colors.disabled.main};
+    cursor: not-allowed;
+    &:hover {
+      background-color: transparent;
     }
   `;
 };
@@ -64,6 +95,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  cursor: pointer;
   border-radius: 4px;
   font-weight: 600;
   padding: ${getPadding};
@@ -73,8 +106,5 @@ export const StyledButton = styled.button<StyledButtonProps>`
       ? `solid 1px ${props.theme.colors[props.color].main}`
       : "none"};
   ${getColors}
-
-  &:hover {
-    cursor: pointer;
-  }
+  ${getLoadingAndDisabledColors}
 `;

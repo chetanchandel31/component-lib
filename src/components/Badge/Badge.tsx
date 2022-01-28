@@ -21,7 +21,7 @@ export type HakiBadgeProps = {
   /** any valid react child, preferably a small string or number */
   badgeContent?: ReactNode;
   badgePosition?: BadgePosition;
-  /** dot variant can be used as a notification that something has changed without giving a count */
+  /** `dot` variant can be used as a notification that something has changed without giving a count */
   variant?: BadgeVariant;
   color?: Colors;
   invisible?: boolean;
