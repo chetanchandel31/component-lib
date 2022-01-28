@@ -1,6 +1,6 @@
 import styled, { ThemedStyledProps } from "styled-components";
-import { defaultColors, Theme } from "../../Providers/theme";
-import { Colors, Sizes } from "../../types/types";
+import { Colors, defaultColors, Sizes, Theme } from "../../theme/theme";
+
 import { ButtonVariants } from "./Button";
 
 type StyledButtonProps = {

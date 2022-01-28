@@ -1,7 +1,12 @@
 import React, { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./global.styles";
-import { defaultTheme, getFinalTheme, Theme, UserEditableTheme } from "./theme";
+import {
+  defaultTheme,
+  getFinalTheme,
+  Theme,
+  UserEditableTheme,
+} from "../theme/theme";
 
 interface HakiProviderProps {
   children: ReactNode;

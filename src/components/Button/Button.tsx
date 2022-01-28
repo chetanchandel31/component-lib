@@ -1,5 +1,5 @@
 import React, { CSSProperties, MouseEventHandler, ReactNode } from "react";
-import { Colors, Sizes } from "../../types/types";
+import { Colors, Sizes } from "../../theme/theme";
 import { StyledButton } from "./styled";
 
 export type ButtonVariants = "filled" | "ghost" | "outlined";
@@ -22,6 +22,8 @@ type HakiButtonProps = {
 
 export type ButtonProps = BaseButtonProps & HakiButtonProps;
 // DOMAttributes<HTMLButtonElement>;
+
+// TODO: disabled and loading and icon button and FAB
 
 /** Buttons allow users to take actions, and make choices, with a single tap.  */
 export const Button = ({

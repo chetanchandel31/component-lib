@@ -1,4 +1,7 @@
-import { Colors } from "../types/types";
+export type Sizes = "sm" | "md" | "lg" | "xl";
+
+// colors
+export type Colors = "primary" | "secondary" | "warning" | "danger";
 
 interface Color {
   main: string;
@@ -34,6 +37,7 @@ export const defaultColors: { [key in Colors]: Color } = {
   },
 };
 
+// theme object
 export const defaultTheme = {
   colors: defaultColors,
 };

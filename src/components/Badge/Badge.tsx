@@ -1,5 +1,5 @@
 import React, { CSSProperties, ReactNode } from "react";
-import { Colors } from "../../types/types";
+import { Colors } from "../../theme/theme";
 import { StyledBadgeContainer, StyledContainer } from "./styled";
 
 export type BadgeVariant = "standard" | "dot";
