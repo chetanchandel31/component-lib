@@ -21,6 +21,13 @@ Default.args = {
   children: "click me",
 };
 
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  children: "click me",
+  disabled: true,
+};
+
 export const Danger = Template.bind({});
 
 Danger.args = {

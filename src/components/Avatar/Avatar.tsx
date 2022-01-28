@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { CSSProperties, MouseEventHandler, useState } from "react";
 import { StyledContainer, StyledFallback, StyledImage } from "./styled";
 
 export type AvatarVariant = "circular" | "rounded" | "square";
@@ -10,6 +10,9 @@ export type HakiAvatarProps = {
   bgColor?: string;
   children?: string;
   size?: number;
+  style?: CSSProperties;
+  className?: string;
+  onClick?: MouseEventHandler<HTMLSpanElement>;
 };
 
 /** Image avatars can be created by passing `src` and `alt` props. Any string passed as children will be used as fallback. In absence of `children`, first alphabet of `alt` will be used as fallback. */
@@ -20,11 +23,20 @@ export const Avatar = ({
   size = 40,
   bgColor = "#ff5722",
   variant = "circular",
+  onClick,
+  className,
+  style,
 }: HakiAvatarProps) => {
   const [doShowFallback, setDoShowFallback] = useState(false);
 
   return (
-    <StyledContainer variant={variant} size={size}>
+    <StyledContainer
+      className={className}
+      style={style}
+      variant={variant}
+      size={size}
+      onClick={onClick}
+    >
       {doShowFallback ? (
         <StyledFallback bgColor={bgColor}>
           {children || alt[0] || "H"}
