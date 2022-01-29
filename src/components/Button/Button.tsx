@@ -1,5 +1,5 @@
 import React, { CSSProperties, MouseEventHandler, ReactNode } from "react";
-import { Colors, Sizes } from "../../theme/theme";
+import { ColorName, Size } from "../../theme/theme";
 import { StyledButton } from "./styled";
 
 export type ButtonVariants = "filled" | "ghost" | "outlined";
@@ -14,8 +14,8 @@ type BaseButtonProps = {
 };
 
 type HakiButtonProps = {
-  size?: Sizes;
-  color?: Colors;
+  size?: Size;
+  color?: ColorName;
   variant?: ButtonVariants;
   isLoading?: boolean;
 };

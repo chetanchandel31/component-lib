@@ -1,9 +1,9 @@
 import styled, { ThemedStyledProps } from "styled-components";
-import { Colors, defaultColors, Theme } from "../../theme/theme";
+import { ColorName, defaultColors, Theme } from "../../theme/theme";
 import { BadgePosition } from "./Badge";
 
 type StyledBadgeContainerProps = {
-  color: Colors;
+  color: ColorName;
   badgePosition: BadgePosition;
   variant: "standard" | "dot";
 };

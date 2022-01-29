@@ -1,11 +1,11 @@
 import styled, { ThemedStyledProps } from "styled-components";
-import { Colors, defaultColors, Sizes, Theme } from "../../theme/theme";
+import { ColorName, defaultColors, Size, Theme } from "../../theme/theme";
 
 import { ButtonVariants } from "./Button";
 
 type StyledButtonProps = {
-  size: Sizes;
-  color: Colors;
+  size: Size;
+  color: ColorName;
   variant: ButtonVariants;
   disabled: boolean;
 };

@@ -3,6 +3,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Avatar, Badge, Button, HakiProvider, Thing } from "../.";
 import "./styles.css";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const App = () => {
   return (
@@ -65,6 +66,12 @@ const App = () => {
           </Badge>
           <button>hi</button>
           <button>hi</button>
+        </div>
+
+        <div>
+          <Button variant="outlined" size="sm">
+            <AiOutlineLoading3Quarters />
+          </Button>
         </div>
       </HakiProvider>
     </>

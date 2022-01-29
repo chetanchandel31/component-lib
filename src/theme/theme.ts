@@ -1,7 +1,7 @@
-export type Sizes = "sm" | "md" | "lg" | "xl";
+export type Size = "sm" | "md" | "lg" | "xl";
 
 // colors
-export type Colors = "primary" | "secondary" | "warning" | "danger";
+export type ColorName = "primary" | "secondary" | "warning" | "danger";
 
 type Color = {
   main: string;
@@ -11,7 +11,7 @@ type Color = {
 };
 
 type ColorPalette = {
-  [key in Colors]: Color;
+  [key in ColorName]: Color;
 } & { disabled: Color };
 
 export const defaultColors: ColorPalette = {

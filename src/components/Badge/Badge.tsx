@@ -1,5 +1,5 @@
 import React, { CSSProperties, ReactNode } from "react";
-import { Colors } from "../../theme/theme";
+import { ColorName } from "../../theme/theme";
 import { StyledBadgeContainer, StyledContainer } from "./styled";
 
 export type BadgeVariant = "standard" | "dot";
@@ -23,7 +23,7 @@ export type HakiBadgeProps = {
   badgePosition?: BadgePosition;
   /** `dot` variant can be used as a notification that something has changed without giving a count */
   variant?: BadgeVariant;
-  color?: Colors;
+  color?: ColorName;
   invisible?: boolean;
   /** badge automatically hides itself as `badgeContent` becomes 0 but this behaviour can be toggled via this prop */
   showZero?: boolean;
