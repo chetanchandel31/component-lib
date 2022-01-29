@@ -1,7 +1,7 @@
 import React, { CSSProperties, MouseEventHandler, ReactNode } from "react";
-import { CircularProgress } from "../..";
 import { ColorName, Size } from "../../theme/theme";
 import { ButtonVariant } from "../Button/Button";
+import { CircularProgress } from "../CircularProgress/CircularProgress";
 import { StyledIconButton } from "./styled";
 
 type BaseIconButtonProps = {
