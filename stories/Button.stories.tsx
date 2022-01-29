@@ -21,11 +21,11 @@ Default.args = {
   children: "click me",
 };
 
-export const Disabled = Template.bind({});
+export const LoadingButton = Template.bind({});
 
-Disabled.args = {
+LoadingButton.args = {
   children: "click me",
-  disabled: true,
+  isLoading: true,
 };
 
 export const Danger = Template.bind({});
@@ -50,4 +50,11 @@ GhostExtraLarge.args = {
   variant: "ghost",
   size: "xl",
   color: "secondary",
+};
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  children: "click me",
+  disabled: true,
 };

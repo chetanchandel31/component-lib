@@ -1,8 +1,9 @@
 import React, { CSSProperties, MouseEventHandler, ReactNode } from "react";
 import { ColorName, Size } from "../../theme/theme";
 import { StyledButton } from "./styled";
+import { CircularProgress } from "../CircularProgress/CircularProgress";
 
-export type ButtonVariants = "filled" | "ghost" | "outlined";
+export type ButtonVariant = "filled" | "ghost" | "outlined";
 
 type BaseButtonProps = {
   /** any string or valid react child  */
@@ -16,15 +17,15 @@ type BaseButtonProps = {
 type HakiButtonProps = {
   size?: Size;
   color?: ColorName;
-  variant?: ButtonVariants;
+  variant?: ButtonVariant;
   isLoading?: boolean;
 };
 
 export type ButtonProps = BaseButtonProps & HakiButtonProps;
 // DOMAttributes<HTMLButtonElement>;
 
-// TODO: icon button and FAB
-// loading will be same as disabled but with loader and optional loading text
+// TODO:  FAB
+// startIcon and endIcon
 // `as` prop for react router
 
 /** Buttons allow users to take actions, and make choices, with a single tap.  */
@@ -51,6 +52,14 @@ export const Button = ({
       disabled={disabled || isLoading}
       {...restProps}
     >
+      {isLoading && (
+        <CircularProgress
+          size={15}
+          thickness={2}
+          color="disabled"
+          style={{ marginRight: "4px" }}
+        />
+      )}
       {children}
     </StyledButton>
   );

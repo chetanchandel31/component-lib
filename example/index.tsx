@@ -8,9 +8,11 @@ import {
   HakiProvider,
   Thing,
   CircularProgress,
+  IconButton,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { BsFillAlarmFill } from "react-icons/bs";
 
 const App = () => {
   return (
@@ -24,7 +26,7 @@ const App = () => {
           color="primary"
           className="demo"
           variant="filled"
-          disabled
+          isLoading
         >
           hello
         </Button>
@@ -57,7 +59,14 @@ const App = () => {
           </Button>
         </div>
         <div>
-          <CircularProgress size={20} color="danger" thickness={2} />
+          <IconButton
+            size="xl"
+            variant="filled"
+            icon={<BsFillAlarmFill />}
+            rounded
+            // isLoading
+            // disabled
+          ></IconButton>
         </div>
       </HakiProvider>
     </>

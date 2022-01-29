@@ -42,3 +42,7 @@ function App() {
 
 export default App;
 ```
+
+## Components
+
+Currently available components along with some examples and interactive documentation are listed here: https://haki.netlify.app

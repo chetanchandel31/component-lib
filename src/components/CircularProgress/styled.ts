@@ -3,7 +3,7 @@ import { ColorName } from "../../theme/theme";
 
 export type StyledCircularProgressProps = {
   size: number;
-  color: ColorName;
+  color: ColorName | "disabled";
   thickness: number;
 };
 
