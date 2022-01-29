@@ -1,7 +1,14 @@
 import "react-app-polyfill/ie11";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Avatar, Badge, Button, HakiProvider, Thing } from "../.";
+import {
+  Avatar,
+  Badge,
+  Button,
+  HakiProvider,
+  Thing,
+  CircularProgress,
+} from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
@@ -22,30 +29,6 @@ const App = () => {
           hello
         </Button>
 
-        <Button
-          style={{ marginLeft: "8px" }}
-          size="md"
-          color="primary"
-          className="demo"
-          variant="ghost"
-          disabled
-        >
-          hello
-        </Button>
-
-        <Badge
-          color="secondary"
-          badgePosition="top-left"
-          variant="dot"
-          badgeContent={9}
-        >
-          <Button size="md" color="primary" className="demo" variant="outlined">
-            hello
-          </Button>
-        </Badge>
-
-        {/* <img src="https://picsum.photos/id/1027/200/300" /> */}
-        {/* "https://picsum.photos/id/237/200/300" */}
         <br />
         <br />
         <div style={{ display: "flex", alignItems: "flex-end" }}>
@@ -72,6 +55,9 @@ const App = () => {
           <Button variant="outlined" size="sm">
             <AiOutlineLoading3Quarters />
           </Button>
+        </div>
+        <div>
+          <CircularProgress size={20} color="danger" thickness={2} />
         </div>
       </HakiProvider>
     </>

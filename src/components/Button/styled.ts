@@ -11,6 +11,7 @@ type StyledButtonProps = {
 };
 
 // helpers
+/** apply light colors or low brightness for hover and dark colors for active state */
 const getColors = (props: ThemedStyledProps<StyledButtonProps, any>) => {
   const theme: Theme = props.theme;
   const colors = theme.colors || defaultColors;
@@ -20,6 +21,9 @@ const getColors = (props: ThemedStyledProps<StyledButtonProps, any>) => {
     color: ${colors[props.color].contrastText};
     background-color: ${colors[props.color].main};
     &:hover {
+     filter: brightness(110%);
+    }
+    &:active {
       background-color: ${colors[props.color].dark};
     }
   `;
@@ -30,6 +34,10 @@ const getColors = (props: ThemedStyledProps<StyledButtonProps, any>) => {
     color: ${colors[props.color].main};
     &:hover {
       background-color: ${colors[props.color].light};
+    }
+    &:active {
+      border-color: ${colors[props.color].dark};
+      color: ${colors[props.color].dark};
     }
   `;
 };

@@ -7,12 +7,10 @@ type HakiIconButtonProps = {
   size: Size;
 };
 
-const IconButton = ({ children, size = "md" }: HakiIconButtonProps) => {
+export const IconButton = ({ children, size = "md" }: HakiIconButtonProps) => {
   return (
     <StyledIconButton _size={size} size="sm">
       {children}
     </StyledIconButton>
   );
 };
-
-export default IconButton;
