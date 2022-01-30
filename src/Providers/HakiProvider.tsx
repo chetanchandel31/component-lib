@@ -7,6 +7,7 @@ import {
   Theme,
   UserEditableTheme,
 } from "../theme/theme";
+// import { Helmet } from "react-helmet";
 
 type HakiProviderProps = {
   children: ReactNode;
@@ -20,9 +21,19 @@ export const HakiProvider = (props: HakiProviderProps) => {
   const finalTheme: Theme = getFinalTheme(theme, defaultTheme);
 
   return (
-    <ThemeProvider theme={finalTheme}>
-      <GlobalStyles />
-      {children}
-    </ThemeProvider>
+    <>
+      {/* <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet> */}
+      <ThemeProvider theme={finalTheme}>
+        <GlobalStyles />
+        {children}
+      </ThemeProvider>
+    </>
   );
 };
