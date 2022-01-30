@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 
 type StyledIconButtonProps = {
   _size: Size;
-  rounded: boolean;
+  circular: boolean;
 };
 
 const getButtonDimension = (
@@ -28,5 +28,5 @@ export const StyledIconButton = styled(Button)<StyledIconButtonProps>`
   height: ${getButtonDimension};
   width: ${getButtonDimension};
   padding: 0;
-  ${(props) => (props.rounded ? `border-radius: 50%;` : ``)}
+  ${(props) => (props.circular ? `border-radius: 50%;` : ``)}
 `;

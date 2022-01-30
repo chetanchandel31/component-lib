@@ -1,4 +1,5 @@
 import styled, { ThemedStyledProps } from "styled-components";
+import { elevated } from "../../global-styles/global.styles";
 import { ColorName, defaultColors, Size, Theme } from "../../theme/theme";
 
 import { ButtonVariant } from "./Button";
@@ -8,6 +9,8 @@ type StyledButtonProps = {
   color: ColorName;
   variant: ButtonVariant;
   disabled: boolean;
+  rounded: boolean;
+  elevation: boolean;
 };
 
 // helpers
@@ -115,4 +118,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
       : "none"};
   ${getColors}
   ${getLoadingAndDisabledColors}
+  ${(props) => (props.rounded ? `border-radius: 50px;` : ``)}
+  ${(props) => (props.elevation ? elevated : ``)}
 `;

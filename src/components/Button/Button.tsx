@@ -19,6 +19,8 @@ type HakiButtonProps = {
   color?: ColorName;
   variant?: ButtonVariant;
   isLoading?: boolean;
+  rounded?: boolean;
+  elevation?: boolean;
 };
 
 export type ButtonProps = BaseButtonProps & HakiButtonProps;
@@ -39,6 +41,9 @@ export const Button = ({
   disabled = false,
   isLoading = false,
   variant = "filled",
+  rounded = false,
+  /** can be used if button is being used as a Floating Action Button */
+  elevation = false,
   ...restProps
 }: ButtonProps) => {
   return (
@@ -50,6 +55,8 @@ export const Button = ({
       color={color}
       variant={variant}
       disabled={disabled || isLoading}
+      rounded={rounded}
+      elevation={elevation}
       {...restProps}
     >
       {isLoading && (

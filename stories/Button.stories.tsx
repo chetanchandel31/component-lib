@@ -52,6 +52,20 @@ GhostExtraLarge.args = {
   color: "secondary",
 };
 
+export const ElevatedButton = Template.bind({});
+
+ElevatedButton.args = {
+  children: "click me",
+  elevation: true,
+};
+
+export const Rounded = Template.bind({});
+
+Rounded.args = {
+  children: "click me",
+  rounded: true,
+};
+
 export const Disabled = Template.bind({});
 
 Disabled.args = {

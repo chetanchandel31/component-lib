@@ -25,7 +25,8 @@ const App = () => {
           size="md"
           color="primary"
           className="demo"
-          variant="filled"
+          rounded
+          variant="outlined"
           isLoading
         >
           hello
@@ -60,10 +61,10 @@ const App = () => {
         </div>
         <div>
           <IconButton
-            size="xl"
+            size="lg"
             variant="filled"
             icon={<BsFillAlarmFill />}
-            rounded
+            circular
             // isLoading
             // disabled
           ></IconButton>

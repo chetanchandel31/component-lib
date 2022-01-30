@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./global.styles";
+import { GlobalStyles } from "../global-styles/global.styles";
 import {
   defaultTheme,
   getFinalTheme,
