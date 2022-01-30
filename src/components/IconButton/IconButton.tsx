@@ -12,18 +12,19 @@ type BaseIconButtonProps = {
 };
 
 export type HakiIconButtonProps = {
+  /** should be a react element, ideally something imported from "react-icons" */
   icon: ReactNode;
   size?: Size;
   variant?: ButtonVariant;
   color?: ColorName;
   isLoading?: boolean;
+  /** useful when using `IconButton` as a Floating Action Button */
   circular?: boolean;
   elevation?: boolean;
 } & BaseIconButtonProps;
 
-/** I am using `<CircularProgress />` from this library as icon for the sake of example but any icon from a react library like "react-icons" should also work fine. Most of the props are similar to `Button` component */
+/** Please note that the icons will have to be imported from some other react-library(preferably from "react-icons"). Most of the props are similar to `Button` component */
 export const IconButton = ({
-  /** should be a react element, ideally something imported from "react-icons" */
   icon,
   size = "md",
   variant = "filled",
@@ -46,7 +47,6 @@ export const IconButton = ({
       color={color}
       style={style}
       elevation={elevation}
-      /** useful for creating FAB */
       circular={circular}
     >
       {isLoading ? (

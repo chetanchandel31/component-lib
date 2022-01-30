@@ -121,3 +121,14 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) => (props.rounded ? `border-radius: 50px;` : ``)}
   ${(props) => (props.elevation ? elevated : ``)}
 `;
+
+export const StyledStartIconContainer = styled.span`
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+`;
+
+export const StyledEndIconContainer = styled(StyledStartIconContainer)`
+  margin-right: 0;
+  margin-left: 4px;
+`;

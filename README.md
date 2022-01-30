@@ -11,7 +11,7 @@ cd your-react-project
 npm i haki-ui
 ```
 
-Step-2: wrap the root of your app with `<HakiProvider></HakiProvider>`. This will ensure all the theme related styles are applied properly.
+Step-2: wrap the root of your app with `<HakiProvider></HakiProvider>`. This will apply some global styles and ensure that all the theme related styles work properly.
 
 ```jsx
 // index.js

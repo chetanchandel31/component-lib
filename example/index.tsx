@@ -22,12 +22,12 @@ const App = () => {
         {/* <ButtonTwo size="l" /> */}
         <Button
           style={{ marginLeft: "8px" }}
-          size="md"
+          size="xl"
           color="primary"
           className="demo"
           rounded
-          variant="outlined"
-          isLoading
+          variant="filled"
+          endIcon={<BsFillAlarmFill />}
         >
           hello
         </Button>

@@ -1,5 +1,6 @@
-import React from "react";
 import { Meta, Story } from "@storybook/react";
+import React from "react";
+import { MdSave, MdSend } from "react-icons/md";
 import { Button, ButtonProps, HakiProvider } from "../src";
 
 const meta: Meta = {
@@ -64,6 +65,20 @@ export const Rounded = Template.bind({});
 Rounded.args = {
   children: "click me",
   rounded: true,
+};
+
+export const StartIconButton = Template.bind({});
+
+StartIconButton.args = {
+  children: "save",
+  startIcon: <MdSave />,
+};
+
+export const EndIconButton = Template.bind({});
+
+EndIconButton.args = {
+  children: "send",
+  endIcon: <MdSend />,
 };
 
 export const Disabled = Template.bind({});
