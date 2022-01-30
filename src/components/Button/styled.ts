@@ -10,7 +10,7 @@ type StyledButtonProps = {
   variant: ButtonVariant;
   disabled: boolean;
   rounded: boolean;
-  elevation: boolean;
+  elevated: boolean;
 };
 
 // helpers
@@ -119,7 +119,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${getColors}
   ${getLoadingAndDisabledColors}
   ${(props) => (props.rounded ? `border-radius: 50px;` : ``)}
-  ${(props) => (props.elevation ? elevated : ``)}
+  ${(props) => (props.elevated ? elevated : ``)}
 `;
 
 export const StyledStartIconContainer = styled.span`

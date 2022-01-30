@@ -25,7 +25,7 @@ type HakiButtonProps = {
   isLoading?: boolean;
   rounded?: boolean;
   /** can be used if button is being used as a Floating Action Button */
-  elevation?: boolean;
+  elevated?: boolean;
   /** can be any icon from a react-library like "react-icons" */
   startIcon?: ReactNode;
   /** can be any icon from a react-library like "react-icons" */
@@ -49,7 +49,7 @@ export const Button = ({
   isLoading = false,
   variant = "filled",
   rounded = false,
-  elevation = false,
+  elevated = false,
   startIcon,
   endIcon,
   ...restProps
@@ -78,7 +78,7 @@ export const Button = ({
       variant={variant}
       disabled={disabled || isLoading}
       rounded={rounded}
-      elevation={elevation}
+      elevated={elevated}
       {...restProps}
     >
       {_startIcon && (

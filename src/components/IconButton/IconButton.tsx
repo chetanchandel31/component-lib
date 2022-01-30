@@ -20,7 +20,7 @@ export type HakiIconButtonProps = {
   isLoading?: boolean;
   /** useful when using `IconButton` as a Floating Action Button */
   circular?: boolean;
-  elevation?: boolean;
+  elevated?: boolean;
 } & BaseIconButtonProps;
 
 /** Please note that the icons will have to be imported from some other react-library(preferably from "react-icons"). Most of the props are similar to `Button` component */
@@ -35,7 +35,7 @@ export const IconButton = ({
   disabled,
   isLoading, // can be directly passed to button but we don't and just dynamically change the child element of StyledIconButton
   circular = false,
-  elevation = false,
+  elevated = false,
 }: HakiIconButtonProps) => {
   return (
     <StyledIconButton
@@ -46,7 +46,7 @@ export const IconButton = ({
       variant={variant}
       color={color}
       style={style}
-      elevation={elevation}
+      elevated={elevated}
       circular={circular}
     >
       {isLoading ? (

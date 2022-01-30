@@ -28,6 +28,7 @@ const App = () => {
           rounded
           variant="filled"
           endIcon={<BsFillAlarmFill />}
+          elevated
         >
           hello
         </Button>
@@ -67,6 +68,7 @@ const App = () => {
             circular
             // isLoading
             // disabled
+            // elevation ➡ elevated
           ></IconButton>
         </div>
       </HakiProvider>
