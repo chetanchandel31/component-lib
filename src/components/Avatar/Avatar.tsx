@@ -4,8 +4,8 @@ import { StyledContainer, StyledFallback, StyledImage } from "./styled";
 export type AvatarVariant = "circular" | "rounded" | "square";
 
 export type HakiAvatarProps = {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
   variant?: AvatarVariant;
   bgColor?: string;
   children?: string;
@@ -18,8 +18,8 @@ export type HakiAvatarProps = {
 /** Image avatars can be created by passing `src` and `alt` props. Any string passed as children will be used as fallback. In absence of `children`, first alphabet of `alt` will be used as fallback. */
 export const Avatar = ({
   children,
-  alt,
-  src,
+  alt = "",
+  src = "",
   size = 40,
   bgColor = "#ff5722",
   variant = "circular",

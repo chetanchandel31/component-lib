@@ -10,6 +10,7 @@ export type HakiCircularProgressProps = {
   style?: CSSProperties;
 };
 
+/** CircularProgress can be used to show the status of ongoing processes, such as loading an app, submitting a form, or saving updates. */
 export const CircularProgress = ({
   size = 40,
   color = "primary",

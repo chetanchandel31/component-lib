@@ -57,7 +57,7 @@ export const ElevatedButton = Template.bind({});
 
 ElevatedButton.args = {
   children: "click me",
-  elevation: true,
+  elevated: true,
 };
 
 export const Rounded = Template.bind({});

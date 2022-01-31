@@ -55,7 +55,7 @@ export const ElevatedIconButton = Template.bind({});
 
 ElevatedIconButton.args = {
   icon: <FaRedo />,
-  elevation: true,
+  elevated: true,
 };
 
 export const DisabledIconButton = Template.bind({});

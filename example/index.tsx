@@ -9,6 +9,8 @@ import {
   Thing,
   CircularProgress,
   IconButton,
+  Backdrop,
+  Image,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -55,21 +57,13 @@ const App = () => {
           <button>hi</button>
         </div>
 
-        <div>
-          <Button variant="outlined" size="sm">
-            <AiOutlineLoading3Quarters />
-          </Button>
-        </div>
-        <div>
-          <IconButton
-            size="lg"
-            variant="filled"
-            icon={<BsFillAlarmFill />}
-            circular
-            // isLoading
-            // disabled
-            // elevation ➡ elevated
-          ></IconButton>
+        <div style={{ border: "solid 2px black" }}>
+          <div>
+            This reusable React component will manage all of your changes to the
+            document head. Helmet takes plain HTML tags and outputs plain HTML
+            tags. It's dead simple, and React beginner friendly.
+          </div>
+          <Image src="https://picsum.photos/id/1027/500" alt="hehehuhuhaha" />
         </div>
       </HakiProvider>
     </>

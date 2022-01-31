@@ -33,7 +33,7 @@ const getColors = (props: ThemedStyledProps<StyledButtonProps, any>) => {
   }
 
   return `
-    background-color: ${colors[props.color].contrastText};
+    background-color: transparent;
     color: ${colors[props.color].main};
     &:hover {
       background-color: ${colors[props.color].light};
