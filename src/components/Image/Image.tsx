@@ -17,7 +17,7 @@ export type ImageDimensionProps = {
   maxWidth?: string;
 };
 
-export type ImageProps = {
+export type HakiImageProps = {
   src: string;
   alt: string;
   style?: CSSProperties;
@@ -37,7 +37,7 @@ export const Image = ({
   minWidth,
   maxHeight,
   maxWidth,
-}: ImageProps) => {
+}: HakiImageProps) => {
   const [doShowBackdrop, setDoShowBackdrop] = useState(false);
   const handleShowBackdrop = () => setDoShowBackdrop(true);
   const handleHideBackdrop = () => setDoShowBackdrop(false);
