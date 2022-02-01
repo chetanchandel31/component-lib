@@ -63,7 +63,7 @@ const App = () => {
             document head. Helmet takes plain HTML tags and outputs plain HTML
             tags. It's dead simple, and React beginner friendly.
           </div>
-          <Image src="https://picsum.photos/id/1027/500" alt="hehehuhuhaha" />
+          <Image src="https://picsum.photos/id/1027/300" alt="hehehuhuhaha" />
         </div>
       </HakiProvider>
     </>

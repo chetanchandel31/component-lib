@@ -1,6 +1,21 @@
 import React, { CSSProperties, MouseEventHandler, useState } from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
-import { StyledContainer, StyledPreviewContainer } from "./styled";
+import { StyledContainer, StyledImage, StyledPreviewContainer } from "./styled";
+
+export type ImageDimensionProps = {
+  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vh" */
+  height?: string;
+  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vw" */
+  width?: string;
+  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vh" */
+  minHeight?: string;
+  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vw" */
+  minWidth?: string;
+  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vh" */
+  maxHeight?: string;
+  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vw" */
+  maxWidth?: string;
+};
 
 export type ImageProps = {
   src: string;
@@ -8,31 +23,45 @@ export type ImageProps = {
   style?: CSSProperties;
   className?: string;
   onClick?: MouseEventHandler<HTMLImageElement>;
-};
+} & ImageDimensionProps;
 
-export const Image = ({ src, alt, style, className, onClick }: ImageProps) => {
+export const Image = ({
+  src,
+  alt,
+  style,
+  className,
+  onClick,
+  height,
+  width,
+  minHeight,
+  minWidth,
+  maxHeight,
+  maxWidth,
+}: ImageProps) => {
   const [doShowBackdrop, setDoShowBackdrop] = useState(false);
-
   const handleShowBackdrop = () => setDoShowBackdrop(true);
   const handleHideBackdrop = () => setDoShowBackdrop(false);
 
   const [doShowPreview, setDoShowPreview] = useState(false);
-
   const handleToggleShowPreview = () => setDoShowPreview((prev) => !prev);
 
   return (
     <>
       <StyledContainer
+        style={style}
+        className={className}
+        onClick={onClick}
+        height={height}
+        width={width}
+        minHeight={minHeight}
+        minWidth={minWidth}
+        maxHeight={maxHeight}
+        maxWidth={maxWidth}
+        // toggle backdrop
         onMouseEnter={handleShowBackdrop}
         onMouseLeave={handleHideBackdrop}
       >
-        <img
-          src={src}
-          alt={alt}
-          style={style}
-          className={className}
-          onClick={onClick}
-        />
+        <StyledImage src={src} alt={alt} />
 
         <Backdrop show={doShowBackdrop} onClick={handleToggleShowPreview}>
           <small style={{ color: "white" }}>Preview</small>
@@ -41,7 +70,7 @@ export const Image = ({ src, alt, style, className, onClick }: ImageProps) => {
 
       {doShowPreview && (
         <StyledPreviewContainer blur={4} onClick={handleToggleShowPreview}>
-          <img src={src} alt={alt} style={{ height: "100%" }} />
+          <img src={src} alt={alt} height="100%" />
         </StyledPreviewContainer>
       )}
     </>
