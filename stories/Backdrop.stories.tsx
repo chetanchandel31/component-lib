@@ -12,8 +12,8 @@ export default meta;
 const Template: Story<HakiBackdropProps> = (args) => {
   return (
     <HakiProvider>
-      some text in background
-      <Backdrop {...args}>this is a backdrop</Backdrop>
+      lorem ipsum
+      <Backdrop {...args}>backdrop with slight blur</Backdrop>
     </HakiProvider>
   );
 };

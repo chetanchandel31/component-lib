@@ -1,20 +1,21 @@
-import React, { CSSProperties, MouseEventHandler, useState } from "react";
+import React, { CSSProperties, SyntheticEvent, useState } from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
+import { getPixelStringFromNumber } from "./helpers/getPixelStringFromNumber";
 import { StyledContainer, StyledImage, StyledPreviewContainer } from "./styled";
 
 export type ImageDimensionProps = {
-  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vh" */
-  height?: string;
-  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vw" */
-  width?: string;
-  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vh" */
-  minHeight?: string;
-  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vw" */
-  minWidth?: string;
-  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vh" */
-  maxHeight?: string;
-  /** should be suffixed by a valid css unit eg "90px", "90em", "90%", "90vw" */
-  maxWidth?: string;
+  /** can be suffixed with a valid css unit eg "90px", "90em", "90%", "90vh". if a number is passed, it'll be assumed to be in `px`(pixels) */
+  height?: string | number;
+  /** can be suffixed by with valid css unit eg "90px", "90em", "90%", "90vh". if a number is passed, it'll be assumed to be in `px`(pixels) */
+  width?: string | number;
+  /** can be suffixed by with valid css unit eg "90px", "90em", "90%", "90vh". if a number is passed, it'll be assumed to be in `px`(pixels) */
+  minHeight?: string | number;
+  /** can be suffixed by with valid css unit eg "90px", "90em", "90%", "90vh". if a number is passed, it'll be assumed to be in `px`(pixels) */
+  minWidth?: string | number;
+  /** can be suffixed by with valid css unit eg "90px", "90em", "90%", "90vh". if a number is passed, it'll be assumed to be in `px`(pixels) */
+  maxHeight?: string | number;
+  /** can be suffixed by with valid css unit eg "90px", "90em", "90%", "90vh". if a number is passed, it'll be assumed to be in `px`(pixels) */
+  maxWidth?: string | number;
 };
 
 export type HakiImageProps = {
@@ -22,15 +23,14 @@ export type HakiImageProps = {
   alt: string;
   style?: CSSProperties;
   className?: string;
-  onClick?: MouseEventHandler<HTMLImageElement>;
 } & ImageDimensionProps;
 
+/** can be used to render easily sizeable, fault-resistant images with in-built preview feature(try clicking the image) */
 export const Image = ({
   src,
   alt,
   style,
   className,
-  onClick,
   height,
   width,
   minHeight,
@@ -45,25 +45,44 @@ export const Image = ({
   const [doShowPreview, setDoShowPreview] = useState(false);
   const handleToggleShowPreview = () => setDoShowPreview((prev) => !prev);
 
+  const [isError, setIsError] = useState(false);
+  const handleError = ({
+    currentTarget,
+  }: SyntheticEvent<HTMLImageElement, Event>) => {
+    currentTarget.onerror = null; // prevents looping
+    setIsError(true);
+    currentTarget.src =
+      "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg";
+  };
+
+  const _height = getPixelStringFromNumber(height);
+  const _width = getPixelStringFromNumber(width);
+  const _minHeight = getPixelStringFromNumber(minHeight);
+  const _minWidth = getPixelStringFromNumber(minWidth);
+  const _maxHeight = getPixelStringFromNumber(maxHeight);
+  const _maxWidth = getPixelStringFromNumber(maxWidth);
+
   return (
     <>
       <StyledContainer
         style={style}
         className={className}
-        onClick={onClick}
-        height={height}
-        width={width}
-        minHeight={minHeight}
-        minWidth={minWidth}
-        maxHeight={maxHeight}
-        maxWidth={maxWidth}
+        height={_height}
+        width={_width}
+        minHeight={_minHeight}
+        minWidth={_minWidth}
+        maxHeight={_maxHeight}
+        maxWidth={_maxWidth}
         // toggle backdrop
         onMouseEnter={handleShowBackdrop}
         onMouseLeave={handleHideBackdrop}
       >
-        <StyledImage src={src} alt={alt} />
+        <StyledImage src={src} alt={alt} onError={handleError} />
 
-        <Backdrop show={doShowBackdrop} onClick={handleToggleShowPreview}>
+        <Backdrop
+          show={doShowBackdrop && !isError}
+          onClick={handleToggleShowPreview}
+        >
           <small style={{ color: "white" }}>Preview</small>
         </Backdrop>
       </StyledContainer>

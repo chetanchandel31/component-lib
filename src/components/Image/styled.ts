@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import { StyledBackdrop } from "../Backdrop/styled";
-import { ImageDimensionProps } from "./Image";
 
-type StyledImageProps = ImageDimensionProps;
+type StyledImageProps = {
+  height?: string;
+  width?: string;
+  minHeight?: string;
+  minWidth?: string;
+  maxHeight?: string;
+  maxWidth?: string;
+};
 
 export const StyledContainer = styled.span<StyledImageProps>`
   display: inline-flex;
@@ -21,6 +27,7 @@ export const StyledContainer = styled.span<StyledImageProps>`
 
 export const StyledPreviewContainer = styled(StyledBackdrop)`
   position: fixed;
+  z-index: 999;
 `;
 
 export const StyledImage = styled.img`

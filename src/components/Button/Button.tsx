@@ -18,7 +18,7 @@ type BaseButtonProps = {
   disabled?: boolean;
 };
 
-type HakiButtonProps = {
+export type HakiButtonProps = {
   size?: Size;
   color?: ColorName;
   variant?: ButtonVariant;
@@ -30,9 +30,8 @@ type HakiButtonProps = {
   startIcon?: ReactNode;
   /** can be any icon from a react-library like "react-icons" */
   endIcon?: ReactNode;
-};
+} & BaseButtonProps;
 
-export type ButtonProps = BaseButtonProps & HakiButtonProps;
 // DOMAttributes<HTMLButtonElement>;
 
 // TODO: `as` prop for react router and href
@@ -53,7 +52,7 @@ export const Button = ({
   startIcon,
   endIcon,
   ...restProps
-}: ButtonProps) => {
+}: HakiButtonProps) => {
   let _startIcon;
   let _endIcon;
 

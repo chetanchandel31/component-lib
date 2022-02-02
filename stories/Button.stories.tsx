@@ -1,7 +1,7 @@
 import { Meta, Story } from "@storybook/react";
 import React from "react";
 import { MdSave, MdSend } from "react-icons/md";
-import { Button, ButtonProps, HakiProvider } from "../src";
+import { Button, HakiButtonProps, HakiProvider } from "../src";
 
 const meta: Meta = {
   title: "Components/Button",
@@ -10,7 +10,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<ButtonProps> = (args) => (
+const Template: Story<HakiButtonProps> = (args) => (
   <HakiProvider>
     <Button {...args} />
   </HakiProvider>
