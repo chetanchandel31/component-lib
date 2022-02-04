@@ -11,6 +11,7 @@ import {
   IconButton,
   Backdrop,
   Image,
+  Text,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -53,15 +54,14 @@ const App = () => {
               z
             </Avatar>
           </Badge>
-          <button>hi</button>
-          <button>hi</button>
+          <button>React</button>
         </div>
 
         <div style={{ border: "solid 2px black" }}>
           <div>
-            This reusable React component will manage all of your changes to the
-            document head. Helmet takes plain HTML tags and outputs plain HTML
-            tags. It's dead simple, and React beginner friendly.
+            <h1>i am h1 lorem ipsum</h1>
+            <h2>i am h2 lorem ipsum</h2>
+            <h3>i am h3 lorem ipsum</h3>i am normal lorem ipsum
           </div>
           <Image
             src="https://picsum.photos/id/1027/300"
@@ -70,6 +70,14 @@ const App = () => {
             alt="hehehuhuhaha"
           />
         </div>
+
+        <Text variant="body1" weight="semi-bold">
+          hi
+        </Text>
+
+        <Text>hi</Text>
+        <div>hi</div>
+        <p>hi</p>
       </HakiProvider>
     </>
   );
