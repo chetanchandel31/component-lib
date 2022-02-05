@@ -12,6 +12,10 @@ import {
   Backdrop,
   Image,
   Text,
+  H1,
+  H2,
+  H3,
+  H4,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -60,8 +64,13 @@ const App = () => {
         <div style={{ border: "solid 2px black" }}>
           <div>
             <h1>i am h1 lorem ipsum</h1>
+            <H1>i am h1 lorem ipsum</H1>
             <h2>i am h2 lorem ipsum</h2>
-            <h3>i am h3 lorem ipsum</h3>i am normal lorem ipsum
+            <H2>i am h2 lorem ipsum</H2>
+            <h3>i am h3 lorem ipsum</h3>
+            <H3>i am h3 lorem ipsum</H3>
+            <h4>i am h4 lorem ipsum</h4>
+            <H4>i am h4 lorem ipsum</H4>
           </div>
           <Image
             src="https://picsum.photos/id/1027/300"
