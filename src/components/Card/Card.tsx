@@ -42,7 +42,8 @@ type HakiCardActionsProps = {
   justifyContent?: "start" | "end" | "center";
 };
 
-/** A card can be used to display content related to a single subject. Card can consist of card header,  */
+// TODO: mdx docs
+/** A card can be used to display content related to a single subject. Card can consist of card header, card media, card content and card actions  */
 export const Card = ({
   children,
   maxWidth,
@@ -60,7 +61,7 @@ Card.Header = ({ action, avatar, subTitle, title }: HakiCardHeaderProps) => {
     <StyledCardHeaderContainer>
       <StyledCardAvatarContainer>{avatar}</StyledCardAvatarContainer>
       <StyledCardHeaderContent>
-        <Text> {title}</Text>
+        <Text>{title}</Text>
         <Text variant="body2" color="disabled">
           {subTitle}
         </Text>

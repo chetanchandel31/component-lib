@@ -57,7 +57,7 @@ const App = () => {
         <br />
         <br />
         <div style={{ marginLeft: "10px" }}>
-          <Card maxWidth={500}>
+          <Card maxWidth={500} variant="elevated">
             <Card.Header
               avatar={<Avatar alt="z" />}
               title="wassup"
