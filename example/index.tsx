@@ -16,6 +16,7 @@ import {
   H2,
   H3,
   H4,
+  H5,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -71,6 +72,8 @@ const App = () => {
             <H3>i am h3 lorem ipsum</H3>
             <h4>i am h4 lorem ipsum</h4>
             <H4>i am h4 lorem ipsum</H4>
+            <h5>i am h5 lorem ipsum</h5>
+            <H5>i am h5 lorem ipsum</H5>
           </div>
           <Image
             src="https://picsum.photos/id/1027/300"

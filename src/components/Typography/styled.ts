@@ -83,3 +83,9 @@ export const StyledH4 = styled.h4<StyledHeadingProps>`
   font-weight: ${getFontWeight};
   color: ${getFontColor};
 `;
+
+export const StyledH5 = styled.h4<StyledHeadingProps>`
+  font-size: var(--fs-h5);
+  font-weight: ${getFontWeight};
+  color: ${getFontColor};
+`;

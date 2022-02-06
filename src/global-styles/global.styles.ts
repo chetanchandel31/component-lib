@@ -3,18 +3,20 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
     :root {
         --fs-h1: 2.75rem; // 44px
-        --fs-h2: 1.875rem; // 30px
-        --fs-h3: 1.25rem; // 20px
-        --fs-h4: 1.125rem; // 18px
+        --fs-h2: 2.25rem; // 36px
+        --fs-h3: 1.875rem; // 30px
+        --fs-h4: 1.25rem; // 20px
+        --fs-h5: 1.125rem; // 18px
         --fs-body1: 1rem;
         --fs-body2: 0.875rem; // 14px
         --fs-caption: 0.75rem; // 12px
     
         @media (min-width: 40em) {
             --fs-h1: 3.38rem; // 54.08px
-            --fs-h2: 2.25rem; // 36px
-            --fs-h3: 1.5rem; // 24px
-            --fs-h4: 1.25rem; // 20px
+            --fs-h2: 2.75rem; // 44px
+            --fs-h3: 2.25rem; // 36px
+            --fs-h4: 1.5rem; // 24px
+            --fs-h5: 1.25rem; // 20px
         }
     }
 

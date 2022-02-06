@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react";
 import React from "react";
-import { Text, HakiTextProps, HakiProvider, H1, H2, H3, H4 } from "../src";
+import { H1, H2, H3, H4, H5, HakiProvider, HakiTextProps } from "../src";
 
 const meta: Meta = {
   title: "Components/Typography/Headings",
@@ -28,6 +28,7 @@ export const CurrentlyAvailableHeadings = () => {
       <H2>Quick brown fox jumped over the lazy dog</H2>
       <H3>Quick brown fox jumped over the lazy dog</H3>
       <H4>Quick brown fox jumped over the lazy dog</H4>
+      <H5>Quick brown fox jumped over the lazy dog</H5>
     </HakiProvider>
   );
 };

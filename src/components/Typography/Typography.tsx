@@ -1,7 +1,13 @@
-import React from "react";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { ColorName } from "../../theme/theme";
-import { StyledH1, StyledH2, StyledH3, StyledH4, StyledText } from "./styled";
+import {
+  StyledH1,
+  StyledH2,
+  StyledH3,
+  StyledH4,
+  StyledH5,
+  StyledText,
+} from "./styled";
 
 export type HakiTextVariant = "body1" | "body2" | "caption";
 export type HakiFontWeight = "regular" | "semi-bold" | "bold";
@@ -82,5 +88,17 @@ export const H4 = ({
     <StyledH4 color={color} weight={weight}>
       {children}
     </StyledH4>
+  );
+};
+
+export const H5 = ({
+  children,
+  color = "default",
+  weight = "regular",
+}: HakiHeadingProps) => {
+  return (
+    <StyledH5 color={color} weight={weight}>
+      {children}
+    </StyledH5>
   );
 };
