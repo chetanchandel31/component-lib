@@ -17,6 +17,7 @@ import {
   H3,
   H4,
   H5,
+  Card,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -26,6 +27,18 @@ const App = () => {
   return (
     <>
       <HakiProvider>
+        <div
+          style={{ border: "solid 1px black", height: "100px", width: "50px" }}
+        >
+          <img
+            src="https://picsum.photos/id/1027/100"
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
         <Thing />
         {/* <ButtonTwo size="l" /> */}
         <Button
@@ -43,6 +56,34 @@ const App = () => {
 
         <br />
         <br />
+        <div style={{ marginLeft: "10px" }}>
+          <Card maxWidth={500}>
+            <Card.Header
+              avatar={<Avatar alt="z" />}
+              title="wassup"
+              subTitle="i am subtitle"
+              action={<IconButton icon="x" size="sm" color="danger" />}
+            />
+            <Card.Media
+              src="https://picsum.photos/id/237/600/300"
+              alt="doggo"
+              height={294}
+            />
+            <Card.Content>hi</Card.Content>
+
+            <Card.Actions justifyContent="end">
+              <Button variant="ghost" size="sm">
+                SHARE
+              </Button>
+              <Button variant="ghost" size="sm">
+                LEARN MORE
+              </Button>
+            </Card.Actions>
+          </Card>
+        </div>
+
+        <br />
+
         <div style={{ display: "flex", alignItems: "flex-end" }}>
           <Badge
             color="secondary"
@@ -82,14 +123,6 @@ const App = () => {
             alt="hehehuhuhaha"
           />
         </div>
-
-        <Text variant="body1" weight="semi-bold">
-          hi
-        </Text>
-
-        <Text>hi</Text>
-        <div>hi</div>
-        <p>hi</p>
       </HakiProvider>
     </>
   );
