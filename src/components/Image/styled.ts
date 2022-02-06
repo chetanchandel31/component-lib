@@ -34,3 +34,11 @@ export const StyledImage = styled.img`
   height: 100%;
   width: 100%;
 `;
+
+export const StyledPreviewImg = styled.img`
+  height: 95%;
+  @media (max-width: 40em) {
+    height: auto;
+    width: 95%;
+  }
+`;

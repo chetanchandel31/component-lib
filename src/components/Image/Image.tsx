@@ -1,7 +1,12 @@
 import React, { CSSProperties, SyntheticEvent, useState } from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
 import { getPixelStringFromNumber } from "./helpers/getPixelStringFromNumber";
-import { StyledContainer, StyledImage, StyledPreviewContainer } from "./styled";
+import {
+  StyledContainer,
+  StyledImage,
+  StyledPreviewContainer,
+  StyledPreviewImg,
+} from "./styled";
 
 export type ImageDimensionProps = {
   /** can be suffixed with a valid css unit eg "90px", "90em", "90%", "90vh". if a number is passed, it'll be assumed to be in `px`(pixels) */
@@ -89,7 +94,7 @@ export const Image = ({
 
       {doShowPreview && (
         <StyledPreviewContainer blur={4} onClick={handleToggleShowPreview}>
-          <img src={src} alt={alt} height="100%" />
+          <StyledPreviewImg src={src} alt={alt} />
         </StyledPreviewContainer>
       )}
     </>
