@@ -11,6 +11,7 @@ import {
   IconButton,
   Backdrop,
   Image,
+  Input,
   Text,
   H1,
   H2,
@@ -28,16 +29,9 @@ const App = () => {
     <>
       <HakiProvider>
         <div
-          style={{ border: "solid 1px black", height: "100px", width: "50px" }}
+          style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >
-          <img
-            src="https://picsum.photos/id/1027/100"
-            style={{
-              height: "100%",
-              width: "100%",
-              objectFit: "cover",
-            }}
-          />
+          <Input size="sm" placeholder="email" />
         </div>
         <Thing />
         {/* <ButtonTwo size="l" /> */}

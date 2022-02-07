@@ -41,13 +41,13 @@ Default.args = {
     </div>
   ),
   maxWidth: 350,
-  variant: "elevated",
+  variant: "outlined",
 };
 
 export const ComplexCard = () => {
   return (
     <HakiProvider>
-      <Card maxWidth={500} variant="outlined">
+      <Card maxWidth={500} variant="elevated">
         <Card.Header
           avatar={<Avatar alt="C" />}
           title="Cooper"
