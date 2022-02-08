@@ -4,6 +4,7 @@ import { Size } from "../../theme/theme";
 type StyledInputProps = {
   _size: Size;
   error: boolean;
+  disabled: boolean;
 };
 
 type StyledInputContainerProps = {
@@ -54,8 +55,8 @@ export const StyledInputContainer = styled.span<StyledInputContainerProps>`
     position: absolute;
     left: 0;
     bottom: 0;
-    transform: translate(0, 100%);
-    font-size: 9px;
+    transform: translate(0, 110%);
+    font-size: 10px;
     margin-left: 2px;
   }
 `;
@@ -70,10 +71,19 @@ export const StyledInput = styled.input<StyledInputProps>`
     ${({ theme, error }) =>
       error ? theme.colors.danger.main : theme.colors.disabled.main};
   font-size: ${getFontSize};
+  background-color: ${({ disabled, theme }) =>
+    disabled ? theme.colors.disabled.light : `transparent`};
 
   &:hover {
     border-color: ${({ theme, error }) =>
       error ? theme.colors.danger.dark : theme.colors.disabled.dark};
+    ${({ disabled, theme }) =>
+      disabled
+        ? `
+        cursor: not-allowed;
+        border-color: ${theme.colors.disabled.main};
+    `
+        : ``}
   }
   &:focus {
     border-color: ${({ theme, error }) =>

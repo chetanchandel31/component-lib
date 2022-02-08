@@ -15,7 +15,7 @@ type BaseInputProps = {
   value?: any;
 };
 
-type HakiInputProps = {
+export type HakiInputProps = {
   size?: Size;
   fullWidth?: boolean;
   /** input state when user enters invalid input */
