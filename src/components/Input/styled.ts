@@ -3,9 +3,14 @@ import { Size } from "../../theme/theme";
 
 type StyledInputProps = {
   _size: Size;
+  error: boolean;
+};
+
+type StyledInputContainerProps = {
   fullWidth: boolean;
 };
 
+/* helpers start */
 const getHeight = (props: ThemedStyledProps<StyledInputProps, any>) => {
   const mapSizeToHeights: { [key in Size]: string } = {
     lg: "40px",
@@ -38,21 +43,43 @@ const getPadding = (props: ThemedStyledProps<StyledInputProps, any>) => {
 
   return mapSizeToPadding[props._size];
 };
+/* helpers end */
+
+export const StyledInputContainer = styled.span<StyledInputContainerProps>`
+  display: inline-flex;
+  position: relative;
+  width: ${({ fullWidth }) => (fullWidth ? `100%` : `auto`)};
+
+  & > .error-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(0, 100%);
+    font-size: 9px;
+    margin-left: 2px;
+  }
+`;
 
 export const StyledInput = styled.input<StyledInputProps>`
   padding: ${getPadding};
   height: ${getHeight};
-  width: ${({ fullWidth }) => (fullWidth ? `100%` : `auto`)};
+  width: 100%;
   outline: none;
   border-radius: 0.25rem;
-  border: solid 2px ${({ theme }) => theme.colors.disabled.main};
+  border: solid 2px
+    ${({ theme, error }) =>
+      error ? theme.colors.danger.main : theme.colors.disabled.main};
   font-size: ${getFontSize};
 
   &:hover {
-    border-color: ${({ theme }) => theme.colors.disabled.dark};
+    border-color: ${({ theme, error }) =>
+      error ? theme.colors.danger.dark : theme.colors.disabled.dark};
   }
   &:focus {
-    border-color: ${({ theme }) => theme.colors.primary.main};
-    box-shadow: ${({ theme }) => theme.colors.primary.main} 0 0 0 1px;
+    border-color: ${({ theme, error }) =>
+      error ? theme.colors.danger.main : theme.colors.primary.main};
+    box-shadow: ${({ theme, error }) =>
+        error ? theme.colors.danger.main : theme.colors.primary.main}
+      0 0 0 1px;
   }
 `;

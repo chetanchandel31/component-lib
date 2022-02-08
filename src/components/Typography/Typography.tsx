@@ -16,6 +16,7 @@ export type HakiTypographyColor = "default" | ColorName | "disabled";
 /* props-start */
 type BaseTextProps = {
   children: ReactNode;
+  className?: string;
   weight?: HakiFontWeight;
   color?: HakiTypographyColor;
 };
@@ -30,13 +31,19 @@ export type HakiHeadingProps = BaseTextProps;
 /** component to render body text and paragraphs with easily customisable size, weight and color */
 export const Text = ({
   children,
+  className,
   variant = "body1",
   weight = "regular",
   color = "default",
 }: HakiTextProps) => {
   // TODO: display: inline
   return (
-    <StyledText variant={variant} weight={weight} color={color}>
+    <StyledText
+      className={className}
+      variant={variant}
+      weight={weight}
+      color={color}
+    >
       {children}
     </StyledText>
   );

@@ -1,10 +1,7 @@
-import React, {
-  ChangeEventHandler,
-  CSSProperties,
-  HTMLInputTypeAttribute,
-} from "react";
+import React, { ChangeEventHandler, CSSProperties } from "react";
 import { Size } from "../../theme/theme";
-import { StyledInput } from "./styled";
+import { StyledInput, StyledInputContainer } from "./styled";
+import { Text } from "../Typography/Typography";
 
 type BaseInputProps = {
   className?: string;
@@ -14,43 +11,57 @@ type BaseInputProps = {
   style?: CSSProperties;
   placeholder?: string;
   required?: boolean;
-  type?: HTMLInputTypeAttribute;
+  type?: "text" | "password" | "number" | "date"; // HTMLInputTypeAttribute;
   value?: any;
 };
 
 type HakiInputProps = {
   size?: Size;
   fullWidth?: boolean;
+  /** input state when user enters invalid input */
+  error?: boolean;
+  /** an optional small hint about error */
+  errorMessage?: string;
 } & BaseInputProps;
 
 export const Input = ({
   className,
-  disabled,
+  disabled = false,
+  error = false,
+  errorMessage,
   size = "md",
   fullWidth = false,
   name,
   onChange,
   placeholder,
-  required,
+  required = false,
   style,
-  type,
+  type = "text",
   value,
 }: HakiInputProps) => {
   return (
-    <StyledInput
-      className={className}
-      placeholder={placeholder}
-      _size={size}
-      fullWidth={fullWidth}
-      name={name}
-      required={required}
-      style={style}
-      type={type}
-      disabled={disabled}
-      value={value}
-      onChange={onChange}
-    />
+    <StyledInputContainer fullWidth={fullWidth}>
+      <StyledInput
+        className={className}
+        disabled={disabled}
+        error={error}
+        placeholder={placeholder}
+        _size={size}
+        name={name}
+        required={required}
+        style={style}
+        type={type}
+        value={value}
+        onChange={onChange}
+      />
+      {error && (
+        <Text className="error-text" color="danger">
+          {errorMessage}
+        </Text>
+      )}
+    </StyledInputContainer>
   );
 };
 
+// allow text to be span using `as`. make an input container , position error text relative to it
 // TODO: autoFocus: boolean: If true, the input element is focused during the first mount.

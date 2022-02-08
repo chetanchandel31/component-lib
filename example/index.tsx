@@ -31,7 +31,12 @@ const App = () => {
         <div
           style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >
-          <Input size="sm" placeholder="email" />
+          <Input
+            size="sm"
+            // error={true}
+            errorMessage="invalid email"
+            placeholder="email"
+          />
         </div>
         <Thing />
         {/* <ButtonTwo size="l" /> */}
