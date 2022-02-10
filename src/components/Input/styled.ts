@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import styled, { ThemedStyledProps } from "styled-components";
 import { Size } from "../../theme/theme";
 
@@ -5,6 +6,8 @@ type StyledInputProps = {
   _size: Size;
   error: boolean;
   disabled: boolean;
+  leftAdornment?: ReactNode;
+  rightAdornment?: ReactNode;
 };
 
 type StyledInputContainerProps = {
@@ -92,4 +95,23 @@ export const StyledInput = styled.input<StyledInputProps>`
         error ? theme.colors.danger.main : theme.colors.primary.main}
       0 0 0 1px;
   }
+  /* create space for start or end adornments */
+  ${({ leftAdornment }) => (leftAdornment ? `padding-left: 24px;` : ``)}
+  ${({ rightAdornment }) => (rightAdornment ? `padding-right: 24px;` : ``)}
+`;
+
+export const StyledLeftAdornmentContainer = styled.div`
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+`;
+
+export const StyledRightAdornmentCOntainer = styled(
+  StyledLeftAdornmentContainer
+)`
+  left: auto;
+  right: 8px;
 `;

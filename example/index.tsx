@@ -21,7 +21,7 @@ import {
   Card,
 } from "../.";
 import "./styles.css";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
 import { BsFillAlarmFill } from "react-icons/bs";
 
 const App = () => {
@@ -33,9 +33,11 @@ const App = () => {
         >
           <Input
             size="sm"
-            // error={true}
-            errorMessage="invalid email"
-            placeholder="email"
+            type="password"
+            placeholder="password"
+            rightAdornment={
+              <AiFillEyeInvisible style={{ color: "rgba(0, 0, 0, 0.5)" }} />
+            }
           />
         </div>
         <Thing />

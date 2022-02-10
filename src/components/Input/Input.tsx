@@ -1,6 +1,11 @@
-import React, { ChangeEventHandler, CSSProperties } from "react";
+import React, { ChangeEventHandler, CSSProperties, ReactNode } from "react";
 import { Size } from "../../theme/theme";
-import { StyledInput, StyledInputContainer } from "./styled";
+import {
+  StyledInput,
+  StyledInputContainer,
+  StyledLeftAdornmentContainer,
+  StyledRightAdornmentCOntainer,
+} from "./styled";
 import { Text } from "../Typography/Typography";
 
 type BaseInputProps = {
@@ -22,6 +27,8 @@ export type HakiInputProps = {
   error?: boolean;
   /** an optional small hint about error */
   errorMessage?: string;
+  leftAdornment?: ReactNode;
+  rightAdornment?: ReactNode;
 } & BaseInputProps;
 
 export const Input = ({
@@ -31,10 +38,12 @@ export const Input = ({
   errorMessage,
   size = "md",
   fullWidth = false,
+  leftAdornment,
   name,
   onChange,
   placeholder,
   required = false,
+  rightAdornment,
   style,
   type = "text",
   value,
@@ -53,11 +62,23 @@ export const Input = ({
         type={type}
         value={value}
         onChange={onChange}
+        leftAdornment={leftAdornment}
+        rightAdornment={rightAdornment}
       />
       {error && (
         <Text className="error-text" color="danger">
           {errorMessage}
         </Text>
+      )}
+      {leftAdornment && (
+        <StyledLeftAdornmentContainer>
+          {leftAdornment}
+        </StyledLeftAdornmentContainer>
+      )}
+      {rightAdornment && (
+        <StyledRightAdornmentCOntainer>
+          {rightAdornment}
+        </StyledRightAdornmentCOntainer>
       )}
     </StyledInputContainer>
   );
