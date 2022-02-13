@@ -1,3 +1,4 @@
+export * from "./components/Alert/Alert";
 export * from "./components/Avatar/Avatar";
 export * from "./components/Backdrop/Backdrop";
 export * from "./components/Badge/Badge";

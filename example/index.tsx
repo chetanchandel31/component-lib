@@ -20,6 +20,7 @@ import {
   H5,
   Card,
   Select,
+  Alert,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
@@ -33,11 +34,16 @@ const App = () => {
         <div
           style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >
-          <Select name="hoh" size="lg">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </Select>
+          <Alert
+            color="primary"
+            onClose={() => console.log("close")}
+            show
+            alertPosition="top"
+            alertDirection="center"
+          >
+            <Alert.Title>Success</Alert.Title>
+            <Alert.Body>This is a success alert — check it out!</Alert.Body>
+          </Alert>
         </div>
         <Thing />
         {/* <ButtonTwo size="l" /> */}

@@ -46,7 +46,6 @@ const getPadding = (props: ThemedStyledProps<StyledSelectProps, any>) => {
 /* helpers end */
 
 // styles
-
 export const StyledSelectContainer = styled.span<StyledSelectContainerProps>`
   display: inline-flex;
   position: relative;

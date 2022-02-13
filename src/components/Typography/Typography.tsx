@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import { ColorName } from "../../theme/theme";
 import {
   StyledH1,
@@ -19,6 +19,7 @@ type BaseTextProps = {
   className?: string;
   weight?: HakiFontWeight;
   color?: HakiTypographyColor;
+  style?: CSSProperties;
 };
 
 export type HakiTextProps = BaseTextProps & {
@@ -35,6 +36,7 @@ export const Text = ({
   variant = "body1",
   weight = "regular",
   color = "default",
+  style,
 }: HakiTextProps) => {
   // TODO: display: inline
   return (
@@ -43,6 +45,7 @@ export const Text = ({
       variant={variant}
       weight={weight}
       color={color}
+      style={style}
     >
       {children}
     </StyledText>

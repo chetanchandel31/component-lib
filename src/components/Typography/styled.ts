@@ -43,7 +43,7 @@ const getFontColor = (
 
   const mapWeightToFontWeight: { [key in HakiTypographyColor]: string } = {
     danger: theme.colors.danger.main,
-    default: "#000",
+    default: "inherit",
     disabled: theme.colors.disabled.dark,
     primary: theme.colors.primary.main,
     secondary: theme.colors.secondary.main,

@@ -30,7 +30,11 @@ export type HakiImageProps = {
   className?: string;
 } & ImageDimensionProps;
 
-/** can be used to render easily sizeable, fault-resistant images with in-built preview feature(try clicking the image) */
+/**
+ * Can be used to render easily sizeable, fault-resistant images with in-built preview feature(try clicking the image).
+ * It's recommended to use `height` and `width` props if you plan to make use of in-built fallback image because your
+ * image and fallback image's dimensions may differ and might cause layout jumps.
+ */
 export const Image = ({
   src,
   alt,
