@@ -59,7 +59,7 @@ export const StyledSelectContainer = styled.span<StyledSelectContainerProps>`
     position: absolute;
     right: 1rem;
     top: 50%;
-    transform: translate(0, -50%) rotate(135deg);
+    transform: translate(0, -75%) rotate(135deg);
     border-top: solid 2px ${defaultColors.disabled.dark};
     border-right: solid 2px ${defaultColors.disabled.dark};
     pointer-events: none;
