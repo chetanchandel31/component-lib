@@ -1,7 +1,7 @@
 import { Meta, Story } from "@storybook/react";
 import React, { CSSProperties } from "react";
-import { Input, HakiInputProps, HakiProvider } from "../src";
-import { AiOutlineUser, AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEyeInvisible, AiOutlineUser } from "react-icons/ai";
+import { HakiInputProps, HakiProvider, IconButton, Input } from "../src";
 
 const meta: Meta = {
   title: "Components/Input",
@@ -62,7 +62,12 @@ InputWithEndIcon.args = {
   type: "password",
   placeholder: "password",
   rightAdornment: (
-    <AiFillEyeInvisible style={{ color: "rgba(0, 0, 0, 0.5)" }} />
+    <IconButton
+      variant="ghost"
+      circular
+      size="sm"
+      icon={<AiFillEyeInvisible style={{ color: "rgba(0, 0, 0, 0.5)" }} />}
+    />
   ),
 };
 

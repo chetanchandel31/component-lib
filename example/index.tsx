@@ -19,10 +19,12 @@ import {
   H4,
   H5,
   Card,
+  Select,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
 import { BsFillAlarmFill } from "react-icons/bs";
+import { useState } from "react";
 
 const App = () => {
   return (
@@ -31,14 +33,11 @@ const App = () => {
         <div
           style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >
-          <Input
-            size="sm"
-            type="password"
-            placeholder="password"
-            rightAdornment={
-              <AiFillEyeInvisible style={{ color: "rgba(0, 0, 0, 0.5)" }} />
-            }
-          />
+          <Select name="hoh" size="lg">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </Select>
         </div>
         <Thing />
         {/* <ButtonTwo size="l" /> */}

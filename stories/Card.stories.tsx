@@ -68,12 +68,8 @@ export const ComplexCard = () => {
         </Card.Content>
 
         <Card.Actions justifyContent="end">
-          <Button variant="ghost" size="sm">
-            SHARE
-          </Button>
-          <Button variant="ghost" size="sm">
-            LEARN MORE
-          </Button>
+          <Button variant="ghost">SHARE</Button>
+          <Button variant="ghost">LEARN MORE</Button>
         </Card.Actions>
       </Card>
     </HakiProvider>

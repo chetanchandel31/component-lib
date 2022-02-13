@@ -16,12 +16,13 @@ type BaseInputProps = {
   style?: CSSProperties;
   placeholder?: string;
   required?: boolean;
-  type?: "text" | "password" | "number" | "date"; // HTMLInputTypeAttribute;
+  type?: "text" | "password" | "number" | "date" | "email"; // HTMLInputTypeAttribute;
   value?: any;
 };
 
 export type HakiInputProps = {
   size?: Size;
+  /** take full width of parent element */
   fullWidth?: boolean;
   /** input state when user enters invalid input */
   error?: boolean;

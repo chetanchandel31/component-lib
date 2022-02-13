@@ -7,6 +7,7 @@ export * from "./components/CircularProgress/CircularProgress";
 export * from "./components/IconButton/IconButton";
 export * from "./components/Image/Image";
 export * from "./components/Input/Input";
+export * from "./components/Select/Select";
 export * from "./components/Typography/Typography";
 export * from "./Demo";
 
