@@ -1,15 +1,14 @@
 import React, { MouseEventHandler, ReactNode } from "react";
 import { ColorName } from "../../theme/theme";
+import { IconButton } from "../IconButton/IconButton";
+import { Text } from "../Typography/Typography";
 import {
   StyledAlert,
   StyledAlertContainer,
   StyledIconContainer,
 } from "./styled";
-import { IconButton } from "../IconButton/IconButton";
-import { Text } from "../Typography/Typography";
 
 export type AlertDirection = "right" | "left" | "center";
-
 export type AlertPosition = "top" | "bottom" | "middle";
 
 /* props-start */
@@ -83,9 +82,5 @@ Alert.Title = ({ children }: HakiAlertTitleProps) => {
 };
 
 Alert.Body = ({ children }: HakiAlertBodyProps) => {
-  return <Text variant="body2">{children}</Text>;
-};
-
-Alert.Actions = ({ children }: HakiAlertBodyProps) => {
   return <Text variant="body2">{children}</Text>;
 };
