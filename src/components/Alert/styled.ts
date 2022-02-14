@@ -55,6 +55,7 @@ export const StyledAlertContainer = styled.div<StyledAlertContainerProps>`
 
   display: flex;
   justify-content: ${getAlertDirection};
+  pointer-events: none;
 
   @media (max-width: 40em) {
     right: 8px;
@@ -72,6 +73,7 @@ export const StyledAlert = styled.div<StyledAlertProps>`
 
   padding: 16px ${({ onClose }) => (onClose ? `34px` : `8px`)} 16px 8px;
   ${({ fullWidth }) => (fullWidth ? `width: 100%;` : ``)}
+  pointer-events: auto;
 `;
 
 export const StyledIconContainer = styled.span`
