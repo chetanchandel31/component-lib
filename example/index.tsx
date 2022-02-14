@@ -38,8 +38,8 @@ const App = () => {
             color="primary"
             onClose={() => console.log("close")}
             show
-            alertPosition="top"
-            alertDirection="center"
+            alertPositionX="left"
+            alertPositionY="bottom"
           >
             <Alert.Title>Success</Alert.Title>
             <Alert.Body>This is a success alert — check it out!</Alert.Body>

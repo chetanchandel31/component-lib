@@ -1,11 +1,11 @@
 import { MouseEventHandler } from "react";
 import styled, { ThemedStyledProps } from "styled-components";
 import { ColorName } from "../../theme/theme";
-import { AlertDirection, AlertPosition } from "./Alert";
+import { AlertPositionY, AlertPositionX } from "./Alert";
 
 type StyledAlertContainerProps = {
-  alertDirection: AlertDirection;
-  alertPosition: AlertPosition;
+  alertPositionY: AlertPositionY;
+  alertPositionX: AlertPositionX;
 };
 
 type StyledAlertProps = {
@@ -16,9 +16,9 @@ type StyledAlertProps = {
 
 /* helpers start */
 const getAlertPositionStyles = ({
-  alertPosition,
+  alertPositionY,
 }: ThemedStyledProps<StyledAlertContainerProps, any>) => {
-  const mapPositionToStyles: { [key in AlertPosition]: string } = {
+  const mapPositionToStyles: { [key in AlertPositionY]: string } = {
     bottom: `
         bottom: 16px;
     `,
@@ -30,18 +30,18 @@ const getAlertPositionStyles = ({
         top: 16px;
     `,
   };
-  return mapPositionToStyles[alertPosition];
+  return mapPositionToStyles[alertPositionY];
 };
 
 const getAlertDirection = ({
-  alertDirection,
+  alertPositionX,
 }: ThemedStyledProps<StyledAlertContainerProps, any>) => {
-  const mapAlertDirectionToDirection: { [key in AlertDirection]: string } = {
+  const mapAlertDirectionToDirection: { [key in AlertPositionX]: string } = {
     center: "center",
     left: "start",
     right: "end",
   };
-  return mapAlertDirectionToDirection[alertDirection];
+  return mapAlertDirectionToDirection[alertPositionX];
 };
 /* helpers end */
 
@@ -53,7 +53,6 @@ export const StyledAlertContainer = styled.div<StyledAlertContainerProps>`
   ${getAlertPositionStyles}
   z-index: 2;
 
-  border: solid 1px red;
   display: flex;
   justify-content: ${getAlertDirection};
 

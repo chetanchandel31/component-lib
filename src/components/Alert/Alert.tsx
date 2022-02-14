@@ -8,16 +8,21 @@ import {
   StyledIconContainer,
 } from "./styled";
 
-export type AlertDirection = "right" | "left" | "center";
-export type AlertPosition = "top" | "bottom" | "middle";
+export type AlertPositionX = "left" | "center" | "right";
+export type AlertPositionY = "top" | "middle" | "bottom";
 
 /* props-start */
 export type HakiAlertProps = {
-  alertDirection?: AlertDirection;
-  alertPosition?: AlertPosition;
+  /** alert's position along the x axis */
+  alertPositionX?: AlertPositionX;
+  /** alert's position along the y axis */
+  alertPositionY?: AlertPositionY;
   children?: ReactNode;
   color?: ColorName;
   fullWidth?: boolean;
+  /** if this function is passed as prop, a cross icon button will be present on the alert
+   *  component and this function will run when that button is clicked
+   */
   onClose?: MouseEventHandler<HTMLButtonElement>;
   show?: boolean;
 };
@@ -38,8 +43,8 @@ export type HakiAlertBodyProps = {
  * `<Alert />` as `children` and it should still work fine.
  *  */
 export const Alert = ({
-  alertDirection = "left",
-  alertPosition = "bottom",
+  alertPositionX = "left",
+  alertPositionY = "bottom",
   children,
   color = "primary",
   fullWidth = false,
@@ -50,8 +55,8 @@ export const Alert = ({
 
   return (
     <StyledAlertContainer
-      alertDirection={alertDirection}
-      alertPosition={alertPosition}
+      alertPositionX={alertPositionX}
+      alertPositionY={alertPositionY}
     >
       <StyledAlert color={color} fullWidth={fullWidth} onClose={onClose}>
         {children}
