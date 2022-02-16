@@ -6,7 +6,6 @@ import {
   Badge,
   Button,
   HakiProvider,
-  Thing,
   CircularProgress,
   IconButton,
   Backdrop,
@@ -21,6 +20,7 @@ import {
   Card,
   Select,
   Alert,
+  Chip,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
@@ -34,18 +34,15 @@ const App = () => {
         <div
           style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >
-          <Alert
-            color="primary"
-            onClose={() => console.log("close")}
-            show
-            alertPositionX="left"
-            alertPositionY="bottom"
+          <Chip
+            color="secondary"
+            size="sm"
+            onClose={() => {}}
+            variant="outlined"
           >
-            <Alert.Title>Success</Alert.Title>
-            <Alert.Body>This is a success alert — check it out!</Alert.Body>
-          </Alert>
+            hi
+          </Chip>
         </div>
-        <Thing />
         {/* <ButtonTwo size="l" /> */}
         <Button
           style={{ marginLeft: "8px" }}

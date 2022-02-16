@@ -36,8 +36,6 @@ export type HakiAlertBodyProps = {
 };
 /* props-end */
 
-// TODO: better explanation for passing content as children vs using in built components when we go for mdx
-
 /** `<Alert.Title />`, `<Alert.Content />` and `onClose` property are there to allow faster development without needing
  * to spend too much time thinking about minor details. But if you need more freedom you can just pass any custom jsx to
  * `<Alert />` as `children` and it should still work fine.
