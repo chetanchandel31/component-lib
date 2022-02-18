@@ -17,4 +17,25 @@ export const StyledBackdrop = styled.div<StyledBackdropProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* mount & unmount animations */
+  animation: mount 0.5s forwards;
+
+  @keyframes mount {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes unmount {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 `;

@@ -1,4 +1,9 @@
-import React, { MouseEventHandler, ReactNode } from "react";
+import React, {
+  MouseEventHandler,
+  ReactNode,
+  useState,
+  useEffect,
+} from "react";
 import { ColorName } from "../../theme/theme";
 import { IconButton } from "../IconButton/IconButton";
 import { Text } from "../Typography/Typography";
@@ -49,12 +54,29 @@ export const Alert = ({
   onClose,
   show = false,
 }: HakiAlertProps) => {
-  if (!show) return null;
+  /* an intermediary state to toggle mount/unmount just so we could delay the unmount to run exit animation */
+  const [doShow, setDoShow] = useState(show);
+  const [animation, setAnimation] = useState("mount 0.5s forwards");
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    if (show) {
+      setDoShow(show);
+      setAnimation("mount 0.5s forwards");
+    } else {
+      timeoutId = setTimeout(() => setDoShow(show), 1000);
+      setAnimation("unmount 0.5s forwards");
+    }
+
+    return () => clearTimeout(timeoutId as NodeJS.Timeout);
+  }, [show]);
+
+  if (!doShow) return null;
 
   return (
     <StyledAlertContainer
       alertPositionX={alertPositionX}
       alertPositionY={alertPositionY}
+      style={{ animation }}
     >
       <StyledAlert color={color} fullWidth={fullWidth} onClose={onClose}>
         {children}

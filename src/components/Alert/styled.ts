@@ -61,6 +61,27 @@ export const StyledAlertContainer = styled.div<StyledAlertContainerProps>`
     right: 8px;
     left: 8px;
   }
+
+  /* mount & unmount animations */
+  animation: mount 0.5s forwards;
+
+  @keyframes mount {
+    from {
+      transform: translate(100vw);
+    }
+    to {
+      transform: translate(0);
+    }
+  }
+
+  @keyframes unmount {
+    from {
+      transform: translate(0);
+    }
+    to {
+      transform: translate(100vw);
+    }
+  }
 `;
 
 export const StyledAlert = styled.div<StyledAlertProps>`

@@ -120,6 +120,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${getLoadingAndDisabledColors}
   ${(props) => (props.rounded ? `border-radius: 50px;` : ``)}
   ${(props) => (props.elevated ? elevated : ``)}
+
+  transition: background-color 0.5s, filter 0.5s, color 0.5s;
 `;
 
 export const StyledStartIconContainer = styled.span`
