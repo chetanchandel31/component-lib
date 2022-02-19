@@ -87,6 +87,7 @@ export const StyledCrossButton = styled.span<StyledCrossButtonProps>`
   font-size: ${({ size }) => (size === "md" ? `12px` : `10px`)};
   font-weight: 700;
   margin-left: 6px;
+  user-select: none;
 
   border: solid 1px white;
   border-radius: 50%;

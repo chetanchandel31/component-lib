@@ -9,6 +9,9 @@ export type ChipVariant = "filled" | "outlined";
 export type HakiChipProps = {
   children: ReactNode;
   color?: ColorName;
+  /** if this function is passed as prop, a cross icon button will be present on the chip
+   *  component and this function will run when that icon is clicked
+   */
   onClose?: MouseEventHandler<HTMLSpanElement>;
   size?: ChipSize;
   variant?: ChipVariant;

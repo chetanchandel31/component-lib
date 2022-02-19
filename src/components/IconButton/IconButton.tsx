@@ -32,8 +32,8 @@ export const IconButton = ({
   style,
   className,
   onClick,
-  disabled,
-  isLoading, // can be directly passed to button but we don't and just dynamically change the child element of StyledIconButton
+  disabled = false,
+  isLoading = false, // can be directly passed to button but we don't and just dynamically change the child element of StyledIconButton
   circular = false,
   elevated = false,
 }: HakiIconButtonProps) => {

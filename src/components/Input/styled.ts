@@ -69,6 +69,7 @@ export const StyledInput = styled.input<StyledInputProps>`
   height: ${getHeight};
   width: 100%;
   outline: none;
+
   border-radius: 0.25rem;
   border: solid 2px
     ${({ theme, error }) =>
@@ -76,6 +77,7 @@ export const StyledInput = styled.input<StyledInputProps>`
   font-size: ${getFontSize};
   background-color: ${({ disabled, theme }) =>
     disabled ? theme.colors.disabled.light : `transparent`};
+  transition: border-color 0.4s, box-shadow 0.4s;
 
   &:hover {
     border-color: ${({ theme, error }) =>

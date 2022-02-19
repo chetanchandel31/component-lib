@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import React from "react";
+import React, { CSSProperties } from "react";
 import { MdSave, MdSend } from "react-icons/md";
 import { Button, HakiButtonProps, HakiProvider } from "../src";
 
@@ -29,28 +29,95 @@ LoadingButton.args = {
   isLoading: true,
 };
 
-export const Danger = Template.bind({});
+export const Colors = () => {
+  const containerStyles: CSSProperties = {
+    display: "flex",
+    gap: "8px",
+  };
 
-Danger.args = {
-  children: "click me",
-  color: "danger",
+  return (
+    <HakiProvider>
+      <div style={containerStyles}>
+        <Button>Primary</Button>
+        <Button color="secondary">Secondary</Button>
+        <Button color="warning">Warning</Button>
+        <Button color="danger">Danger</Button>
+      </div>
+    </HakiProvider>
+  );
 };
 
-export const SmallOutlined = Template.bind({});
+export const Variants = () => {
+  const containerStyles: CSSProperties = {
+    display: "flex",
+    gap: "8px",
+  };
 
-SmallOutlined.args = {
-  children: "click me",
-  variant: "outlined",
-  size: "sm",
+  return (
+    <HakiProvider>
+      <div style={containerStyles}>
+        <Button>filled</Button>
+        <Button variant="outlined">outlined</Button>
+        <Button variant="ghost">ghost</Button>
+      </div>
+    </HakiProvider>
+  );
 };
 
-export const GhostExtraLarge = Template.bind({});
+export const Sizes = () => {
+  const containerStyles: CSSProperties = {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    margin: "8px 0",
+  };
 
-GhostExtraLarge.args = {
-  children: "click me",
-  variant: "ghost",
-  size: "xl",
-  color: "secondary",
+  return (
+    <HakiProvider>
+      <div style={containerStyles}>
+        <Button size="sm" variant="ghost">
+          small
+        </Button>
+        <Button size="md" variant="ghost">
+          medium
+        </Button>
+        <Button size="lg" variant="ghost">
+          large
+        </Button>
+        <Button size="xl" variant="ghost">
+          extra large
+        </Button>
+      </div>
+      <div style={containerStyles}>
+        <Button color="danger" size="sm" variant="outlined">
+          small
+        </Button>
+        <Button color="danger" size="md" variant="outlined">
+          medium
+        </Button>
+        <Button color="danger" size="lg" variant="outlined">
+          large
+        </Button>
+        <Button color="danger" size="xl" variant="outlined">
+          extra large
+        </Button>
+      </div>
+      <div style={containerStyles}>
+        <Button color="secondary" size="sm">
+          small
+        </Button>
+        <Button color="secondary" size="md">
+          medium
+        </Button>
+        <Button color="secondary" size="lg">
+          large
+        </Button>
+        <Button color="secondary" size="xl">
+          extra large
+        </Button>
+      </div>
+    </HakiProvider>
+  );
 };
 
 export const ElevatedButton = Template.bind({});

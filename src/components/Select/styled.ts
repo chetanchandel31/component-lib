@@ -74,6 +74,7 @@ export const StyledSelect = styled.select<StyledSelectProps>`
   font-size: ${getFontSize};
   appearance: none; // hide the arrow
   outline: none;
+  transition: border-color 0.4s, box-shadow 0.4s;
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary.main};

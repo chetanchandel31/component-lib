@@ -121,7 +121,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) => (props.rounded ? `border-radius: 50px;` : ``)}
   ${(props) => (props.elevated ? elevated : ``)}
 
-  transition: background-color 0.5s, filter 0.5s, color 0.5s;
+  transition: background-color 0.4s, filter 0.4s, color 0.4s;
 `;
 
 export const StyledStartIconContainer = styled.span`

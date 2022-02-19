@@ -30,11 +30,31 @@ export const DangerColoredAlert = () => {
   return (
     // we can use `color` prop to apply any of the theme colors(i.e primary, secondary, danger, warning)
     <HakiProvider>
-      <Button onClick={handleShowAlert}>Show Alert</Button>
+      <Button onClick={handleShowAlert}>Show colored Alert</Button>
       <Alert onClose={handleHideAlert} show={doShowAlert} color="danger">
         <Alert.Title>Alert title</Alert.Title>
         <Alert.Body>
           This is a "danger" color alert — click cross button to close it
+        </Alert.Body>
+      </Alert>
+    </HakiProvider>
+  );
+};
+
+export const GlassBackgroundAlert = () => {
+  const [doShowAlert, setDoShowAlert] = useState(false);
+  const handleShowAlert = () => setDoShowAlert(true);
+  const handleHideAlert = () => setDoShowAlert(false);
+
+  return (
+    // glass prop can give the component a glass-like background
+    <HakiProvider>
+      <Button onClick={handleShowAlert}>Show glassy alert</Button>
+      <Alert glass onClose={handleHideAlert} show={doShowAlert} color="danger">
+        <Alert.Title>Alert title</Alert.Title>
+        <Alert.Body>
+          This alert has glass background — try observing background while
+          scrolling the page
         </Alert.Body>
       </Alert>
     </HakiProvider>
@@ -49,7 +69,7 @@ export const CustomPositionAlert = () => {
   return (
     // `alertPositionX` and `alertPositionY` props can be used to customise alert's position, default position is bottom left
     <HakiProvider>
-      <Button onClick={handleShowAlert}>Show Alert</Button>
+      <Button onClick={handleShowAlert}>Show alert with custom position</Button>
       <Alert
         onClose={handleHideAlert}
         show={doShowAlert}
@@ -74,7 +94,9 @@ export const AlertWithCustomJSXChildren = () => {
   return (
     // here's an example of alert with plain jsx passed as children, useful for inserting more customised layouts
     <HakiProvider>
-      <Button onClick={handleShowAlert}>Show Alert</Button>
+      <Button onClick={handleShowAlert}>
+        Show alert with custom jsx children
+      </Button>
       <Alert show={doShowAlert} color="secondary">
         <h2>heading</h2>
         <div style={{ marginBottom: "8px" }}>

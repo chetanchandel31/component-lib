@@ -11,6 +11,7 @@ type StyledAlertContainerProps = {
 type StyledAlertProps = {
   color: ColorName;
   fullWidth: boolean;
+  glass: boolean;
   onClose?: MouseEventHandler<HTMLButtonElement>;
 };
 
@@ -63,18 +64,21 @@ export const StyledAlertContainer = styled.div<StyledAlertContainerProps>`
   }
 
   /* mount & unmount animations */
-  animation: mount 0.5s forwards;
+  animation: mount-alert 0.4s forwards;
 
-  @keyframes mount {
-    from {
+  @keyframes mount-alert {
+    0% {
       transform: translate(100vw);
     }
-    to {
+    90% {
+      transform: translate(-20px);
+    }
+    100% {
       transform: translate(0);
     }
   }
 
-  @keyframes unmount {
+  @keyframes unmount-alert {
     from {
       transform: translate(0);
     }
@@ -88,7 +92,9 @@ export const StyledAlert = styled.div<StyledAlertProps>`
   position: relative;
 
   color: ${({ theme, color }) => theme.colors[color].dark};
-  background-color: ${({ theme, color }) => theme.colors[color].light};
+  background-color: ${({ theme, color }) => theme.colors[color].light}${({ glass }) => (glass ? `99` : ``)};
+  ${({ glass }) => (glass ? `backdrop-filter: blur(5px);` : ``)}
+
   border: solid 2px ${({ theme, color }) => theme.colors[color].dark};
   border-radius: 2px;
 

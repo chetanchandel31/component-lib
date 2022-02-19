@@ -11,7 +11,7 @@ cd your-react-project
 npm i haki-ui
 ```
 
-Step-2: wrap the root of your app with `<HakiProvider></HakiProvider>`. This will apply some global styles and ensure that all the theme related styles work properly.
+Step-2: wrap the root of your app with `<HakiProvider></HakiProvider>`. This will apply some global styles and ensure that all haki components have access to theme. **Skipping this step will cause errors**.
 
 ```jsx
 // index.js
@@ -47,6 +47,4 @@ export default App;
 
 Currently available components along with some examples and interactive documentation are listed here: https://haki.netlify.app
 
----
-
-_please note all the icons used in examples are imported from a third party library (react-icons). if you want to use any icons, you'll also have to install "react-icons" or use any other third party package of your choice. none of the icons can be imported directly from "haki-ui"_
+(_please note all the icons used in examples are imported from a third party library (react-icons). if you want to use any icons, you'll also need to install "react-icons" or any other third party package of your choice. none of the icons can be imported directly from "haki-ui"_)

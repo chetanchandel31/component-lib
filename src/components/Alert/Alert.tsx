@@ -25,6 +25,8 @@ export type HakiAlertProps = {
   children?: ReactNode;
   color?: ColorName;
   fullWidth?: boolean;
+  /** have glassy background for alert ✨ */
+  glass?: boolean;
   /** if this function is passed as prop, a cross icon button will be present on the alert
    *  component and this function will run when that button is clicked
    */
@@ -41,7 +43,7 @@ export type HakiAlertBodyProps = {
 };
 /* props-end */
 
-/** `<Alert.Title />`, `<Alert.Content />` and `onClose` property are there to allow faster development without needing
+/** `<Alert.Title />`, `<Alert.Body />` and `onClose` property are there to allow faster development without needing
  * to spend too much time thinking about minor details. But if you need more freedom you can just pass any custom jsx to
  * `<Alert />` as `children` and it should still work fine.
  *  */
@@ -51,20 +53,21 @@ export const Alert = ({
   children,
   color = "primary",
   fullWidth = false,
+  glass = false,
   onClose,
   show = false,
 }: HakiAlertProps) => {
   /* an intermediary state to toggle mount/unmount just so we could delay the unmount to run exit animation */
   const [doShow, setDoShow] = useState(show);
-  const [animation, setAnimation] = useState("mount 0.5s forwards");
+  const [animation, setAnimation] = useState("mount-alert 0.4s forwards");
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     if (show) {
       setDoShow(show);
-      setAnimation("mount 0.5s forwards");
+      setAnimation("mount-alert 0.4s forwards");
     } else {
       timeoutId = setTimeout(() => setDoShow(show), 1000);
-      setAnimation("unmount 0.5s forwards");
+      setAnimation("unmount-alert 0.4s forwards");
     }
 
     return () => clearTimeout(timeoutId as NodeJS.Timeout);
@@ -78,7 +81,12 @@ export const Alert = ({
       alertPositionY={alertPositionY}
       style={{ animation }}
     >
-      <StyledAlert color={color} fullWidth={fullWidth} onClose={onClose}>
+      <StyledAlert
+        color={color}
+        fullWidth={fullWidth}
+        glass={glass}
+        onClose={onClose}
+      >
         {children}
         {onClose && (
           <StyledIconContainer>
