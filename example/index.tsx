@@ -21,6 +21,7 @@ import {
   Select,
   Alert,
   Chip,
+  ClickableArea,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
@@ -42,6 +43,11 @@ const App = () => {
           >
             hi
           </Chip>
+        </div>
+        <div style={{ margin: "8px" }}>
+          <ClickableArea color="danger">
+            <span style={{ margin: "8px" }}>clickable area</span>
+          </ClickableArea>
         </div>
         {/* <ButtonTwo size="l" /> */}
         <Button

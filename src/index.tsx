@@ -6,6 +6,7 @@ export * from "./components/Button/Button";
 export * from "./components/Card/Card";
 export * from "./components/Chip/Chip";
 export * from "./components/CircularProgress/CircularProgress";
+export * from "./components/ClickableArea/ClickableArea";
 export * from "./components/IconButton/IconButton";
 export * from "./components/Image/Image";
 export * from "./components/Input/Input";
