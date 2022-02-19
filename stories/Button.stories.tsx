@@ -134,18 +134,20 @@ Rounded.args = {
   rounded: true,
 };
 
-export const StartIconButton = Template.bind({});
+export const ButtonsWithIcons = () => {
+  const containerStyles: CSSProperties = {
+    display: "flex",
+    gap: "8px",
+  };
 
-StartIconButton.args = {
-  children: "save",
-  startIcon: <MdSave />,
-};
-
-export const EndIconButton = Template.bind({});
-
-EndIconButton.args = {
-  children: "send",
-  endIcon: <MdSend />,
+  return (
+    <HakiProvider>
+      <div style={containerStyles}>
+        <Button startIcon={<MdSave />}>save</Button>
+        <Button endIcon={<MdSend />}>send</Button>
+      </div>
+    </HakiProvider>
+  );
 };
 
 export const Disabled = Template.bind({});
