@@ -91,7 +91,7 @@ export const Alert = ({
         {onClose && (
           <StyledIconContainer>
             <IconButton
-              icon="x"
+              icon="✕"
               color={color}
               size="sm"
               circular

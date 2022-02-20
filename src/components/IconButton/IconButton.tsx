@@ -23,7 +23,7 @@ export type HakiIconButtonProps = {
   elevated?: boolean;
 } & BaseIconButtonProps;
 
-/** Please note that the icons will have to be imported from some other react-library(preferably from "react-icons"). Most of the props are similar to `Button` component */
+/** Please note the icons will have to be imported from some other react-library(preferably from "react-icons"). Most of the props are similar to `Button` component */
 export const IconButton = ({
   icon,
   size = "md",

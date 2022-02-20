@@ -52,7 +52,7 @@ export const ComplexCard = () => {
           avatar={<Avatar alt="C" />}
           title="Cooper"
           subTitle="Arlong park"
-          action={<IconButton icon="x" size="sm" color="danger" />}
+          action={<IconButton icon="✕" size="sm" color="danger" />}
         />
 
         <Card.Media
