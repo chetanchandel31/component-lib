@@ -22,6 +22,7 @@ import {
   Alert,
   Chip,
   ClickableArea,
+  Rating,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
@@ -29,20 +30,18 @@ import { BsFillAlarmFill } from "react-icons/bs";
 import { useState } from "react";
 
 const App = () => {
+  const [rating, setRating] = useState(4);
+
   return (
     <>
       <HakiProvider>
         <div
           style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >
-          <Chip
-            color="secondary"
-            size="sm"
-            onClose={() => {}}
-            variant="outlined"
-          >
-            hi
-          </Chip>
+          <Rating
+            value={rating}
+            onChange={({ target }) => setRating(Number(target.value))}
+          />
         </div>
         <div style={{ margin: "8px" }}>
           <ClickableArea color="danger">
@@ -71,7 +70,7 @@ const App = () => {
               avatar={<Avatar alt="z" />}
               title="wassup"
               subTitle="i am subtitle"
-              action={<IconButton icon="x" size="sm" color="danger" />}
+              action={<IconButton icon="✕" size="sm" color="danger" />}
             />
             <Card.Media
               src="https://picsum.photos/id/237/600/300"
