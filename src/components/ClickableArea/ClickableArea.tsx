@@ -12,7 +12,7 @@ export type HakiClickableAreaProps = {
   style?: CSSProperties;
 };
 
-/** make an element appear more clickable */
+/** Make an element appear more clickable. Can be used on menu items, list items etc. as needed. */
 export const ClickableArea = ({
   children,
   className,

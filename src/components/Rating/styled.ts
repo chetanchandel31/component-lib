@@ -25,13 +25,13 @@ const getSize = ({
 export const StyledRatingContainer = styled.div<StyledRatingContainerProps>`
   display: inline-flex;
   align-items: center;
-  border: solid 1px black;
   line-height: 1;
   font-size: ${getSize};
   user-select: none;
 `;
 
 export const StyledStar = styled.span<StyledStarProps>`
-  color: ${({ selected }) => (selected ? "gold" : "grey")};
-  transition: color 0.2s;
+  color: ${({ selected, theme }) =>
+    selected ? "gold" : theme.colors.disabled.main};
+  transition: color 0.3s;
 `;
