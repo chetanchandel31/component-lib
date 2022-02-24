@@ -13,7 +13,7 @@ type StyledButtonProps = {
   elevated: boolean;
 };
 
-// helpers
+/* helpers-start */
 /** apply light colors or low brightness for hover and dark colors for active state */
 const getColors = (props: ThemedStyledProps<StyledButtonProps, any>) => {
   const theme: Theme = props.theme;
@@ -100,6 +100,7 @@ const getHeight = (props: ThemedStyledProps<StyledButtonProps, any>) => {
       return "32px";
   }
 };
+/* helpers-end */
 
 // styles
 export const StyledButton = styled.button<StyledButtonProps>`
@@ -122,6 +123,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) => (props.elevated ? elevated : ``)}
 
   transition: background-color 0.4s, filter 0.4s, color 0.4s;
+  user-select: none;
 `;
 
 export const StyledStartIconContainer = styled.span`

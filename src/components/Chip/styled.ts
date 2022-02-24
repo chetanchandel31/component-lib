@@ -72,6 +72,7 @@ export const StyledChip = styled.span<StyledChipProps>`
   border-radius: 56px;
   height: ${({ size }) => (size === "md" ? `32px` : `24px`)};
   padding: 0 ${({ size }) => (size === "md" ? `12px` : `8px`)};
+  user-select: none;
 
   ${getColors}
   ${setPaddingForCloseButton}
@@ -84,12 +85,10 @@ export const StyledCrossButton = styled.span<StyledCrossButtonProps>`
   line-height: 0;
 
   cursor: pointer;
-  font-size: ${({ size }) => (size === "md" ? `12px` : `10px`)};
+  font-size: ${({ size }) => (size === "md" ? `9px` : `8px`)};
   font-weight: 700;
   margin-left: 6px;
-  user-select: none;
 
-  border: solid 1px white;
   border-radius: 50%;
 
   height: ${({ size }) => (size === "md" ? `18px` : `14px`)};

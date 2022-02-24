@@ -39,6 +39,7 @@ const App = () => {
           style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >
           <Rating
+            name="demo"
             value={rating}
             onChange={({ target }) => setRating(Number(target.value))}
           />

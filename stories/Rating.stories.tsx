@@ -34,6 +34,7 @@ export const ControlledRating = () => {
   return (
     <HakiProvider>
       <Rating
+        name="demo"
         value={rating}
         onChange={({ target }) => setRating(Number(target.value))}
       />
@@ -51,10 +52,10 @@ export const Sizes = () => {
   return (
     <HakiProvider>
       <div style={containerStyles}>
-        <Rating size="sm" value={1} />
-        <Rating size="md" value={1} />
-        <Rating size="lg" value={1} />
-        <Rating size="xl" value={1} />
+        <Rating name="small" size="sm" value={1} />
+        <Rating name="medium" size="md" value={1} />
+        <Rating name="large" size="lg" value={1} />
+        <Rating name="extra-large" size="xl" value={1} />
       </div>
     </HakiProvider>
   );

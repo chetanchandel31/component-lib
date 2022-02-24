@@ -4,6 +4,8 @@ import { StyledRatingContainer, StyledStar } from "./styled";
 
 export type HakiRatingProps = {
   initialRating?: number;
+  /**  The name attribute of the radio input elements. This input name should be unique within the page */
+  name: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   readOnly?: boolean;
   size?: Size;
@@ -12,6 +14,7 @@ export type HakiRatingProps = {
 
 /** Ratings allow users to share a measurement of the quality of their experiences */
 export const Rating = ({
+  name,
   onChange,
   readOnly = false,
   size = "md",
@@ -35,7 +38,7 @@ export const Rating = ({
             <input
               checked={value === i + 1}
               disabled={readOnly}
-              name="ratingbutton"
+              name={name}
               onChange={onChange}
               style={{ display: "none" }}
               type="radio"

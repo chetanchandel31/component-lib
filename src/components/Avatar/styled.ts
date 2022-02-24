@@ -22,6 +22,7 @@ export const StyledContainer = styled.span<StyledContainerProps>`
       : props.variant === "rounded"
       ? "4px"
       : "0"};
+  user-select: none;
 `;
 
 export const StyledFallback = styled.span<StyledFallbackProps>`

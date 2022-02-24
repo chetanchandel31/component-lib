@@ -35,7 +35,7 @@ export const Chip = ({
           size={size}
           variant={variant}
         >
-          x
+          ✕
         </StyledCrossButton>
       )}
     </StyledChip>
