@@ -4,6 +4,7 @@ export * from "./components/Backdrop/Backdrop";
 export * from "./components/Badge/Badge";
 export * from "./components/Button/Button";
 export * from "./components/Card/Card";
+export * from "./components/Checkbox/Checkbox";
 export * from "./components/Chip/Chip";
 export * from "./components/CircularProgress/CircularProgress";
 export * from "./components/ClickableArea/ClickableArea";
