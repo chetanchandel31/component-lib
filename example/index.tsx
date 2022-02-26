@@ -51,7 +51,14 @@ const App = () => {
           </ClickableArea>
         </div>
 
-        <Checkbox />
+        <Checkbox size="lg" />
+
+        <Checkbox
+          // checked
+          color="danger"
+          size="md"
+          style={{ marginLeft: "8px" }}
+        />
 
         <div
           style={{
