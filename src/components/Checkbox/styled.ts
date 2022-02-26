@@ -1,18 +1,27 @@
 import styled from "styled-components";
+import { ColorName } from "../../theme/theme";
 
-export const StyledCheckboxContainer = styled.label`
+export type StyledCheckboxContainerProps = {
+  color: ColorName;
+  size: "md" | "lg";
+};
+
+export const StyledCheckboxContainer = styled.label<StyledCheckboxContainerProps>`
   display: inline-flex;
+  cursor: pointer;
+
   /* hide input */
-  & > input[type = checkbox] {
+  & > input[type="checkbox"] {
     display: none;
   }
   /* use this span as box instead */
   & > .haki-checkbox {
-    height: 18px;
-    width: 18px;
+    height: ${({ size }) => (size === "md" ? `18px` : `24px`)};
+    width: ${({ size }) => (size === "md" ? `18px` : `24px`)};
     position: relative;
-    border: solid 2px ${(props) => props.theme.colors.primary.main};
+    border: solid 3px ${({ color, theme }) => theme.colors[color].main};
     border-radius: 4px;
+    transition: background-color 0.2s;
   }
   /* the checkmark */
   & > .haki-checkbox::after {
@@ -23,18 +32,18 @@ export const StyledCheckboxContainer = styled.label`
     border-left: solid 2px;
     border-bottom: solid 2px;
     border-color: #fff;
-    transform: rotate(-45deg);
 
     position: absolute;
-    top: 2px;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%) rotate(-45deg);
   }
   /* what to do when checked */
-  & > input[type = checkbox]:checked + .haki-checkbox {
-    background-color: ${(props) => props.theme.colors.primary.main};
+  & > input[type="checkbox"]:checked + .haki-checkbox {
+    background-color: ${({ color, theme }) => theme.colors[color].main};
   }
 
-  & > input[type = checkbox]:checked + .haki-checkbox::after {
+  & > input[type="checkbox"]:checked + .haki-checkbox::after {
     content: "";
   }
 `;
