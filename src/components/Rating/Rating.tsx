@@ -40,6 +40,7 @@ export const Rating = ({
               disabled={readOnly}
               name={name}
               onChange={onChange}
+              readOnly
               style={{ display: "none" }}
               type="radio"
               value={i + 1}
