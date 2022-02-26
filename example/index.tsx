@@ -23,6 +23,7 @@ import {
   Chip,
   ClickableArea,
   Rating,
+  Checkbox,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
@@ -48,6 +49,35 @@ const App = () => {
           <ClickableArea color="danger">
             <span style={{ margin: "8px" }}>clickable area</span>
           </ClickableArea>
+        </div>
+
+        <Checkbox size="lg" />
+
+        <Checkbox
+          // checked
+          color="danger"
+          size="md"
+          style={{ marginLeft: "8px" }}
+        />
+
+        <div
+          style={{
+            border: "solid 2px yellow",
+            height: "400px",
+            position: "relative",
+            background: "black",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              background: "white",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+            }}
+          ></div>
         </div>
         {/* <ButtonTwo size="l" /> */}
         <Button
