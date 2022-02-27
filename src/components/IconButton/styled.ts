@@ -12,15 +12,15 @@ const getButtonDimension = (
 ) => {
   switch (props._size) {
     case "xl":
-      return "48px";
+      return "3rem";
     case "lg":
-      return "40px";
+      return "2.5rem";
     case "md":
-      return "32px";
+      return "2rem";
     case "sm":
-      return "24px";
+      return "1.5rem";
     default:
-      return "32px";
+      return "2rem";
   }
 };
 

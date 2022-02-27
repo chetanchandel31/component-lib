@@ -69,9 +69,9 @@ export const StyledChip = styled.span<StyledChipProps>`
   align-items: center;
   border: solid 1px;
   border-color: ${({ color, theme }) => theme.colors[color].main};
-  border-radius: 56px;
-  height: ${({ size }) => (size === "md" ? `32px` : `24px`)};
-  padding: 0 ${({ size }) => (size === "md" ? `12px` : `8px`)};
+  border-radius: 3.5rem;
+  height: ${({ size }) => (size === "md" ? `2rem` : `1.5rem`)};
+  padding: 0 ${({ size }) => (size === "md" ? `0.75rem` : `0.5rem`)};
   user-select: none;
 
   ${getColors}
@@ -91,8 +91,8 @@ export const StyledCrossButton = styled.span<StyledCrossButtonProps>`
 
   border-radius: 50%;
 
-  height: ${({ size }) => (size === "md" ? `18px` : `14px`)};
-  width: ${({ size }) => (size === "md" ? `18px` : `14px`)};
+  height: ${({ size }) => (size === "md" ? `1.125rem` : `0.875rem`)};
+  width: ${({ size }) => (size === "md" ? `1.125rem` : `0.875rem`)};
 
   ${getChipColors}
 

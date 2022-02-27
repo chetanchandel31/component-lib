@@ -13,10 +13,10 @@ const getSize = ({
   size,
 }: ThemedStyledProps<StyledRatingContainerProps, any>) => {
   const sizes: { [key in Size]: string } = {
-    sm: "18px",
-    md: "24px",
-    lg: "30px",
-    xl: "34px",
+    sm: "1.125rem",
+    md: "1.5rem",
+    lg: "1.875rem",
+    xl: "2.125rem",
   };
 
   return sizes[size];

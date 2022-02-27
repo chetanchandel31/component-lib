@@ -4,7 +4,7 @@ import {
   StyledInput,
   StyledInputContainer,
   StyledLeftAdornmentContainer,
-  StyledRightAdornmentCOntainer,
+  StyledRightAdornmentContainer,
 } from "./styled";
 import { Text } from "../Typography/Typography";
 
@@ -77,9 +77,9 @@ export const Input = ({
         </StyledLeftAdornmentContainer>
       )}
       {rightAdornment && (
-        <StyledRightAdornmentCOntainer>
+        <StyledRightAdornmentContainer>
           {rightAdornment}
-        </StyledRightAdornmentCOntainer>
+        </StyledRightAdornmentContainer>
       )}
     </StyledInputContainer>
   );

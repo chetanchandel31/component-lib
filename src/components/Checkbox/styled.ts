@@ -16,8 +16,8 @@ export const StyledCheckboxContainer = styled.label<StyledCheckboxContainerProps
   }
   /* use this span as box instead */
   & > .haki-checkbox {
-    height: ${({ size }) => (size === "md" ? `18px` : `24px`)};
-    width: ${({ size }) => (size === "md" ? `18px` : `24px`)};
+    height: ${({ size }) => (size === "md" ? `1.125rem` : `1.5rem`)};
+    width: ${({ size }) => (size === "md" ? `1.125rem` : `1.5rem`)};
     position: relative;
     border: solid 3px ${({ color, theme }) => theme.colors[color].main};
     border-radius: 4px;

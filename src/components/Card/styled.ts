@@ -31,11 +31,11 @@ export const StyledCardContainer = styled.div<StyledCardContainerProps>`
 export const StyledCardHeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 1rem;
 `;
 
 export const StyledCardAvatarContainer = styled.div`
-  margin-right: 16px;
+  margin-right: 1rem;
 `;
 
 export const StyledCardHeaderContent = styled.div`
@@ -44,13 +44,13 @@ export const StyledCardHeaderContent = styled.div`
 /* card header styles end */
 
 export const StyledCardContentContainer = styled.div`
-  padding: 16px;
+  padding: 1rem;
 `;
 
 export const StyledCardActionsContainer = styled.div<StyledCardActionsContainerProps>`
-  padding: 8px;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: ${({ justifyContent }) => justifyContent};
-  gap: 8px;
+  gap: 0.5rem;
 `;

@@ -48,3 +48,30 @@ export default App;
 Storybook documentation for available components: https://haki.netlify.app
 
 (_please note all the icons used in examples are imported from a third party library (react-icons). if you want to use any icons, you'll also need to install "react-icons" or any other third party package of your choice. none of the icons can be imported directly from "haki-ui"_)
+
+## Customising theme colors
+
+Any or all of the theme colors(`primary`, `secondary`, `danger` and `warning`) can be customised by passing `theme` prop to `HakiProvider`
+
+```tsx
+// index.js
+import { HakiProvider } from "haki-ui";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <HakiProvider
+      theme={{
+        primary: {
+          light: "#ffcec5",
+          main: "#f44336",
+          dark: "#ba000d",
+          contrastText: "#000",
+        },
+      }}
+    >
+      <App />
+    </HakiProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```

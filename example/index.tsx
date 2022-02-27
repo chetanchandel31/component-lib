@@ -24,6 +24,7 @@ import {
   ClickableArea,
   Rating,
   Checkbox,
+  useTheme,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
@@ -45,6 +46,7 @@ const App = () => {
             onChange={({ target }) => setRating(Number(target.value))}
           />
         </div>
+        <SmolComponent />
         <div style={{ margin: "8px" }}>
           <ClickableArea color="danger">
             <span style={{ margin: "8px" }}>clickable area</span>
@@ -165,6 +167,13 @@ const App = () => {
       </HakiProvider>
     </>
   );
+};
+
+const SmolComponent = () => {
+  const { colors } = useTheme();
+  console.log("h", colors);
+
+  return <>i'm smol</>;
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));

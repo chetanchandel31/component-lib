@@ -16,3 +16,5 @@ export * from "./components/Select/Select";
 export * from "./components/Typography/Typography";
 
 export * from "./Providers/HakiProvider";
+
+export * from "./theme/useTheme";

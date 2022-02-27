@@ -13,10 +13,10 @@ type StyledSelectContainerProps = {
 /* helpers start */
 const getHeight = (props: ThemedStyledProps<StyledSelectProps, any>) => {
   const mapSizeToHeights: { [key in Size]: string } = {
-    lg: "40px",
-    md: "32px",
-    sm: "24px",
-    xl: "48px",
+    lg: "2.5rem",
+    md: "2rem",
+    sm: "1.5rem",
+    xl: "3rem",
   };
 
   return mapSizeToHeights[props._size];
@@ -24,10 +24,10 @@ const getHeight = (props: ThemedStyledProps<StyledSelectProps, any>) => {
 
 const getFontSize = (props: ThemedStyledProps<StyledSelectProps, any>) => {
   const mapSizeToFontSize: { [key in Size]: string } = {
-    lg: "16px",
-    md: "14px",
-    sm: "12px",
-    xl: "18px",
+    lg: "1rem",
+    md: "0.875rem",
+    sm: "0.75rem",
+    xl: "1.125rem",
   };
 
   return mapSizeToFontSize[props._size];
@@ -35,10 +35,10 @@ const getFontSize = (props: ThemedStyledProps<StyledSelectProps, any>) => {
 
 const getPadding = (props: ThemedStyledProps<StyledSelectProps, any>) => {
   const mapSizeToPadding: { [key in Size]: string } = {
-    lg: "0 40px 0 16px",
-    md: "0 40px 0 12px",
-    sm: "0 40px 0 8px",
-    xl: "0 40px 0 16px",
+    lg: "0 2.5rem 0 1rem",
+    md: "0 2.5rem 0 0.75rem",
+    sm: "0 2.5rem 0 0.5rem",
+    xl: "0 2.5rem 0 1rem",
   };
 
   return mapSizeToPadding[props._size];

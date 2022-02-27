@@ -78,26 +78,26 @@ const getLoadingAndDisabledColors = (
 const getPadding = (props: ThemedStyledProps<StyledButtonProps, any>) => {
   switch (props.size) {
     case "xl":
-      return "0 24px";
+      return "0 1.5rem";
     case "lg":
-      return "0 16px";
+      return "0 1rem";
     case "sm":
-      return "0 8px";
+      return "0 0.5rem";
     default:
-      return "0 12px";
+      return "0 0.75rem";
   }
 };
 
 const getHeight = (props: ThemedStyledProps<StyledButtonProps, any>) => {
   switch (props.size) {
     case "xl":
-      return "48px";
+      return "3rem";
     case "lg":
-      return "40px";
+      return "2.5rem";
     case "sm":
-      return "24px";
+      return "1.5rem";
     default:
-      return "32px";
+      return "2rem";
   }
 };
 /* helpers-end */

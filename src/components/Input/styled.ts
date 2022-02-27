@@ -17,10 +17,10 @@ type StyledInputContainerProps = {
 /* helpers start */
 const getHeight = (props: ThemedStyledProps<StyledInputProps, any>) => {
   const mapSizeToHeights: { [key in Size]: string } = {
-    lg: "40px",
-    md: "32px",
-    sm: "24px",
-    xl: "48px",
+    lg: "2.5rem",
+    md: "2rem",
+    sm: "1.5rem",
+    xl: "3rem",
   };
 
   return mapSizeToHeights[props._size];
@@ -28,10 +28,10 @@ const getHeight = (props: ThemedStyledProps<StyledInputProps, any>) => {
 
 const getFontSize = (props: ThemedStyledProps<StyledInputProps, any>) => {
   const mapSizeToFontSize: { [key in Size]: string } = {
-    lg: "16px",
-    md: "14px",
-    sm: "12px",
-    xl: "18px",
+    lg: "1rem",
+    md: "0.875rem",
+    sm: "0.75rem",
+    xl: "1.125rem",
   };
 
   return mapSizeToFontSize[props._size];
@@ -39,10 +39,10 @@ const getFontSize = (props: ThemedStyledProps<StyledInputProps, any>) => {
 
 const getPadding = (props: ThemedStyledProps<StyledInputProps, any>) => {
   const mapSizeToPadding: { [key in Size]: string } = {
-    lg: "0 16px",
-    md: "0 12px",
-    sm: "0 8px",
-    xl: "0 16px",
+    lg: "0 1rem",
+    md: "0 0.75rem",
+    sm: "0 0.5rem",
+    xl: "0 1rem",
   };
 
   return mapSizeToPadding[props._size];
@@ -59,7 +59,7 @@ export const StyledInputContainer = styled.span<StyledInputContainerProps>`
     left: 0;
     bottom: 0;
     transform: translate(0, 110%);
-    font-size: 10px;
+    font-size: 0.625rem;
     margin-left: 2px;
   }
 `;
@@ -98,22 +98,22 @@ export const StyledInput = styled.input<StyledInputProps>`
       0 0 0 1px;
   }
   /* create space for start or end adornments */
-  ${({ leftAdornment }) => (leftAdornment ? `padding-left: 24px;` : ``)}
-  ${({ rightAdornment }) => (rightAdornment ? `padding-right: 24px;` : ``)}
+  ${({ leftAdornment }) => (leftAdornment ? `padding-left: 1.5rem;` : ``)}
+  ${({ rightAdornment }) => (rightAdornment ? `padding-right: 1.5rem;` : ``)}
 `;
 
 export const StyledLeftAdornmentContainer = styled.div`
   position: absolute;
-  left: 8px;
+  left: 0.5rem;
   top: 0;
   bottom: 0;
   display: flex;
   align-items: center;
 `;
 
-export const StyledRightAdornmentCOntainer = styled(
+export const StyledRightAdornmentContainer = styled(
   StyledLeftAdornmentContainer
 )`
   left: auto;
-  right: 8px;
+  right: 0.5rem;
 `;

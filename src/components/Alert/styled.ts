@@ -21,14 +21,14 @@ const getAlertPositionStyles = ({
 }: ThemedStyledProps<StyledAlertContainerProps, any>) => {
   const mapPositionToStyles: { [key in AlertPositionY]: string } = {
     bottom: `
-        bottom: 16px;
+        bottom: 1rem;
     `,
     middle: `
         top: 50%;
         transform: translate(0, -50%);
     `,
     top: `
-        top: 16px;
+        top: 1rem;
     `,
   };
   return mapPositionToStyles[alertPositionY];
@@ -49,8 +49,8 @@ const getAlertDirection = ({
 /* styles */
 export const StyledAlertContainer = styled.div<StyledAlertContainerProps>`
   position: fixed;
-  right: 16px;
-  left: 16px;
+  right: 1rem;
+  left: 1rem;
   ${getAlertPositionStyles}
   z-index: 2;
 
@@ -59,8 +59,8 @@ export const StyledAlertContainer = styled.div<StyledAlertContainerProps>`
   pointer-events: none;
 
   @media (max-width: 40em) {
-    right: 8px;
-    left: 8px;
+    right: 0.5rem;
+    left: 0.5rem;
   }
 
   /* mount & unmount animations */
@@ -98,7 +98,8 @@ export const StyledAlert = styled.div<StyledAlertProps>`
   border: solid 2px ${({ theme, color }) => theme.colors[color].dark};
   border-radius: 2px;
 
-  padding: 16px ${({ onClose }) => (onClose ? `34px` : `8px`)} 16px 8px;
+  padding: 1rem ${({ onClose }) => (onClose ? `2.125rem` : `0.5rem`)} 1rem
+    0.5rem;
   ${({ fullWidth }) => (fullWidth ? `width: 100%;` : ``)}
   pointer-events: auto;
 `;
@@ -106,6 +107,6 @@ export const StyledAlert = styled.div<StyledAlertProps>`
 export const StyledIconContainer = styled.span`
   display: inline-flex;
   position: absolute;
-  top: 6px;
-  right: 8px;
+  top: 0.375rem;
+  right: 0.5rem;
 `;
