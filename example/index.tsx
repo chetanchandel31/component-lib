@@ -52,8 +52,8 @@ const App = () => {
           <ScrollableArea style={{ height: "200px", overflowY: "scroll" }}>
             {Array(19)
               .fill(null)
-              .map(() => (
-                <div>hi</div>
+              .map((_el, i) => (
+                <div key={i}>hi</div>
               ))}
           </ScrollableArea>
         </div>
