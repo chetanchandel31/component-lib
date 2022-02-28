@@ -13,6 +13,7 @@ export * from "./components/Image/Image";
 export * from "./components/Input/Input";
 export * from "./components/Rating/Rating";
 export * from "./components/Select/Select";
+export * from "./components/ScrollableArea/ScrollableArea";
 export * from "./components/Typography/Typography";
 
 export * from "./Providers/HakiProvider";

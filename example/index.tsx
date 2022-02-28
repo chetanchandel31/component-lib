@@ -25,6 +25,7 @@ import {
   Rating,
   Checkbox,
   useTheme,
+  ScrollableArea,
 } from "../.";
 import "./styles.css";
 import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
@@ -48,9 +49,13 @@ const App = () => {
         </div>
         <SmolComponent />
         <div style={{ margin: "8px" }}>
-          <ClickableArea color="danger">
-            <span style={{ margin: "8px" }}>clickable area</span>
-          </ClickableArea>
+          <ScrollableArea style={{ height: "200px", overflowY: "scroll" }}>
+            {Array(19)
+              .fill(null)
+              .map(() => (
+                <div>hi</div>
+              ))}
+          </ScrollableArea>
         </div>
 
         <Checkbox size="lg" />
