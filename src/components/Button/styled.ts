@@ -5,12 +5,13 @@ import { ColorName, defaultColors, Size, Theme } from "../../theme/theme";
 import { ButtonVariant } from "./Button";
 
 type StyledButtonProps = {
-  size: Size;
   color: ColorName;
-  variant: ButtonVariant;
   disabled: boolean;
-  rounded: boolean;
   elevated: boolean;
+  fullWidth: boolean;
+  rounded: boolean;
+  size: Size;
+  variant: ButtonVariant;
 };
 
 /* helpers-start */
@@ -113,6 +114,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-weight: 600;
   padding: ${getPadding};
   height: ${getHeight};
+  ${({ fullWidth }) => (fullWidth ? `width: 100%;` : ``)}
   border: ${(props) =>
     props.variant === "outlined"
       ? `solid 1px ${props.theme.colors[props.color].main}`

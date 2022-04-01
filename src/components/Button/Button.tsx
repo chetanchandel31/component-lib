@@ -20,17 +20,18 @@ type BaseButtonProps = {
 };
 
 export type HakiButtonProps = {
-  size?: Size;
   color?: ColorName;
-  variant?: ButtonVariant;
-  isLoading?: boolean;
-  rounded?: boolean;
   /** can be used if button is being used as a Floating Action Button */
   elevated?: boolean;
-  /** can be any icon from a react-library like "react-icons" */
-  startIcon?: ReactNode;
+  fullWidth?: boolean;
+  size?: Size;
   /** can be any icon from a react-library like "react-icons" */
   endIcon?: ReactNode;
+  isLoading?: boolean;
+  rounded?: boolean;
+  /** can be any icon from a react-library like "react-icons" */
+  startIcon?: ReactNode;
+  variant?: ButtonVariant;
 } & BaseButtonProps;
 
 // DOMAttributes<HTMLButtonElement>;
@@ -40,19 +41,20 @@ export type HakiButtonProps = {
 /** Buttons allow users to take actions, and make choices, with a single tap.  */
 export const Button = ({
   children,
-  color = "primary",
-  size = "md",
-  style,
   className,
-  onClick,
+  color = "primary",
   disabled = false,
-  isLoading = false,
-  variant = "filled",
-  rounded = false,
   elevated = false,
-  startIcon,
-  type,
   endIcon,
+  fullWidth = false,
+  isLoading = false,
+  onClick,
+  rounded = false,
+  type,
+  size = "md",
+  startIcon,
+  style,
+  variant = "filled",
   ...restProps
 }: HakiButtonProps) => {
   let _startIcon;
@@ -72,15 +74,16 @@ export const Button = ({
   return (
     <StyledButton
       className={className}
-      style={style}
-      onClick={onClick}
-      size={size}
       color={color}
-      variant={variant}
       disabled={disabled || isLoading}
-      rounded={rounded}
       elevated={elevated}
+      fullWidth={fullWidth}
+      onClick={onClick}
+      rounded={rounded}
+      style={style}
+      size={size}
       type={type}
+      variant={variant}
       {...restProps}
     >
       {_startIcon && (
