@@ -12,10 +12,11 @@ export type ButtonVariant = "filled" | "ghost" | "outlined";
 type BaseButtonProps = {
   /** any string or valid react child  */
   children: ReactNode;
-  style?: CSSProperties;
   className?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  style?: CSSProperties;
+  type?: "button" | "submit" | "reset"; // remove if type `DOMAttributes<HTMLButtonElement>` is used for props in future
 };
 
 export type HakiButtonProps = {
@@ -50,6 +51,7 @@ export const Button = ({
   rounded = false,
   elevated = false,
   startIcon,
+  type,
   endIcon,
   ...restProps
 }: HakiButtonProps) => {
@@ -78,6 +80,7 @@ export const Button = ({
       disabled={disabled || isLoading}
       rounded={rounded}
       elevated={elevated}
+      type={type}
       {...restProps}
     >
       {_startIcon && (

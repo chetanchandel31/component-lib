@@ -5,10 +5,11 @@ import { CircularProgress } from "../CircularProgress/CircularProgress";
 import { StyledIconButton } from "./styled";
 
 type BaseIconButtonProps = {
-  style?: CSSProperties;
   className?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  style?: CSSProperties;
+  type?: "button" | "submit" | "reset"; // remove if type `DOMAttributes<HTMLButtonElement>` is used for props in future
 };
 
 export type HakiIconButtonProps = {
@@ -36,6 +37,7 @@ export const IconButton = ({
   isLoading = false, // can be directly passed to button but we don't and just dynamically change the child element of StyledIconButton
   circular = false,
   elevated = false,
+  type,
   ...restProps
 }: HakiIconButtonProps) => {
   return (
@@ -49,6 +51,7 @@ export const IconButton = ({
       style={style}
       elevated={elevated}
       circular={circular}
+      type={type}
       {...restProps}
     >
       {isLoading ? (
