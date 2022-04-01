@@ -36,6 +36,7 @@ export const IconButton = ({
   isLoading = false, // can be directly passed to button but we don't and just dynamically change the child element of StyledIconButton
   circular = false,
   elevated = false,
+  ...restProps
 }: HakiIconButtonProps) => {
   return (
     <StyledIconButton
@@ -48,6 +49,7 @@ export const IconButton = ({
       style={style}
       elevated={elevated}
       circular={circular}
+      {...restProps}
     >
       {isLoading ? (
         // TODO: size needs to change as per IconButton `size`
