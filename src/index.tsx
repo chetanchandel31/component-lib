@@ -19,3 +19,4 @@ export * from "./components/Typography/Typography";
 export * from "./Providers/HakiProvider";
 
 export * from "./theme/useTheme";
+export * from "./theme/theme";
