@@ -10,6 +10,7 @@ export type HakiSelectProps = {
   fullWidth?: boolean;
   name?: string;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
+  placeholder?: string;
   size?: Size;
   style?: CSSProperties;
   value?: any;
@@ -22,6 +23,7 @@ export const Select = ({
   fullWidth = false,
   name,
   onChange,
+  placeholder = "Select your option",
   size = "md",
   style,
   value,
@@ -38,6 +40,9 @@ export const Select = ({
           style={style}
           value={value}
         >
+          <option disabled selected style={{ display: "none" }} value="">
+            {placeholder}
+          </option>
           {children}
         </StyledSelect>
       </StyledSelectContainer>
