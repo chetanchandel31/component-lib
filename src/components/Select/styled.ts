@@ -68,7 +68,7 @@ export const StyledSelectContainer = styled.span<StyledSelectContainerProps>`
 export const StyledSelect = styled.select<StyledSelectProps>`
   width: 100%;
   border-radius: 4px;
-  border: solid 2px ${defaultColors.disabled.dark};
+  border: solid 2px ${defaultColors.disabled.main};
   padding: ${getPadding};
   height: ${getHeight};
   font-size: ${getFontSize};

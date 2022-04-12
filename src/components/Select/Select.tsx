@@ -35,12 +35,13 @@ export const Select = ({
           _size={size}
           className={className}
           disabled={disabled}
+          defaultValue=""
           name={name}
           onChange={onChange}
           style={style}
           value={value}
         >
-          <option disabled selected style={{ display: "none" }} value="">
+          <option disabled style={{ display: "none" }} value="">
             {placeholder}
           </option>
           {children}
