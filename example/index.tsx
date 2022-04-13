@@ -1,36 +1,28 @@
-import "react-app-polyfill/ie11";
 import * as React from "react";
+import { useState } from "react";
+import "react-app-polyfill/ie11";
 import * as ReactDOM from "react-dom";
+import { BsFillAlarmFill } from "react-icons/bs";
 import {
   Avatar,
   Badge,
   Button,
-  HakiProvider,
-  CircularProgress,
-  IconButton,
-  Backdrop,
-  Image,
-  Input,
-  Text,
+  Card,
+  Checkbox,
   H1,
   H2,
   H3,
   H4,
   H5,
-  Card,
-  Select,
-  Alert,
-  Chip,
-  ClickableArea,
+  HakiProvider,
+  IconButton,
+  Image,
   Rating,
-  Checkbox,
-  useTheme,
   ScrollableArea,
+  Select,
+  useTheme,
 } from "../.";
 import "./styles.css";
-import { AiOutlineLoading3Quarters, AiFillEyeInvisible } from "react-icons/ai";
-import { BsFillAlarmFill } from "react-icons/bs";
-import { useState } from "react";
 
 const App = () => {
   const [rating, setRating] = useState(4);
@@ -38,6 +30,18 @@ const App = () => {
   return (
     <>
       <HakiProvider>
+        <form
+          onSubmit={(e) => {
+            console.log("hi");
+            e.preventDefault();
+          }}
+        >
+          <input required />
+          <Select required>
+            <option>a</option>
+            <option>b</option>
+          </Select>
+        </form>
         <div
           style={{ border: "solid 1px black", margin: "10px", padding: "10px" }}
         >

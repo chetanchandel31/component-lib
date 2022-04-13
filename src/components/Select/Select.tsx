@@ -11,6 +11,7 @@ export type HakiSelectProps = {
   name?: string;
   onChange?: ChangeEventHandler<HTMLSelectElement>;
   placeholder?: string;
+  required?: boolean;
   size?: Size;
   style?: CSSProperties;
   value?: any;
@@ -24,6 +25,7 @@ export const Select = ({
   name,
   onChange,
   placeholder = "Select your option",
+  required = false,
   size = "md",
   style,
   value,
@@ -38,6 +40,7 @@ export const Select = ({
           defaultValue=""
           name={name}
           onChange={onChange}
+          required={required}
           style={style}
           value={value}
         >
