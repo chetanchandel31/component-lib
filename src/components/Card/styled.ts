@@ -23,7 +23,7 @@ const getVariant = ({
 export const StyledCardContainer = styled.div<StyledCardContainerProps>`
   border-radius: 4px;
   overflow: hidden;
-  max-width: ${({ maxWidth }) => `${maxWidth}px` ?? "none"};
+  max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : "none")};
   ${getVariant}
 `;
 

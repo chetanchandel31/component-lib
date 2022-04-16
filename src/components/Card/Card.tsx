@@ -1,4 +1,6 @@
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
+import { Image } from "../Image/Image";
+import { Text } from "../Typography/Typography";
 import {
   StyledCardActionsContainer,
   StyledCardAvatarContainer,
@@ -7,14 +9,13 @@ import {
   StyledCardHeaderContainer,
   StyledCardHeaderContent,
 } from "./styled";
-import { Text } from "../Typography/Typography";
-import { Image } from "../Image/Image";
 
 export type CardVariant = "outlined" | "elevated";
 
 export type HakiCardProps = {
   children: ReactNode;
   maxWidth?: number;
+  style?: CSSProperties;
   variant?: CardVariant;
 };
 
@@ -47,10 +48,11 @@ type HakiCardActionsProps = {
 export const Card = ({
   children,
   maxWidth,
+  style,
   variant = "outlined",
 }: HakiCardProps) => {
   return (
-    <StyledCardContainer maxWidth={maxWidth} variant={variant}>
+    <StyledCardContainer maxWidth={maxWidth} style={style} variant={variant}>
       {children}
     </StyledCardContainer>
   );
