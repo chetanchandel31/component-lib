@@ -61,10 +61,11 @@ export const H1 = ({
   as,
   children,
   color = "default",
+  style,
   weight = "regular",
 }: HakiHeadingProps) => {
   return (
-    <StyledH1 as={as} color={color} weight={weight}>
+    <StyledH1 as={as} color={color} style={style} weight={weight}>
       {children}
     </StyledH1>
   );
@@ -74,10 +75,11 @@ export const H2 = ({
   as,
   children,
   color = "default",
+  style,
   weight = "regular",
 }: HakiHeadingProps) => {
   return (
-    <StyledH2 as={as} color={color} weight={weight}>
+    <StyledH2 as={as} color={color} style={style} weight={weight}>
       {children}
     </StyledH2>
   );
@@ -87,10 +89,11 @@ export const H3 = ({
   as,
   children,
   color = "default",
+  style,
   weight = "regular",
 }: HakiHeadingProps) => {
   return (
-    <StyledH3 as={as} color={color} weight={weight}>
+    <StyledH3 as={as} color={color} style={style} weight={weight}>
       {children}
     </StyledH3>
   );
@@ -100,10 +103,11 @@ export const H4 = ({
   as,
   children,
   color = "default",
+  style,
   weight = "regular",
 }: HakiHeadingProps) => {
   return (
-    <StyledH4 as={as} color={color} weight={weight}>
+    <StyledH4 as={as} color={color} style={style} weight={weight}>
       {children}
     </StyledH4>
   );
@@ -113,10 +117,11 @@ export const H5 = ({
   as,
   children,
   color = "default",
+  style,
   weight = "regular",
 }: HakiHeadingProps) => {
   return (
-    <StyledH5 as={as} color={color} weight={weight}>
+    <StyledH5 as={as} color={color} style={style} weight={weight}>
       {children}
     </StyledH5>
   );
