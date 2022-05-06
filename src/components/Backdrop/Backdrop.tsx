@@ -1,16 +1,18 @@
 import React, {
+  CSSProperties,
   MouseEventHandler,
   ReactNode,
-  useState,
   useEffect,
+  useState,
 } from "react";
 import { StyledBackdrop } from "./styled";
 
 export type HakiBackdropProps = {
-  children?: ReactNode;
   blur?: number;
-  show?: boolean;
+  children?: ReactNode;
   onClick?: MouseEventHandler<HTMLDivElement>;
+  show?: boolean;
+  style?: CSSProperties;
 };
 
 /**
@@ -22,6 +24,7 @@ export const Backdrop = ({
   children,
   blur = 0,
   show = false,
+  style,
   onClick,
 }: HakiBackdropProps) => {
   /* an intermediary state to toggle mount/unmount just so we could delay the unmount to run exit animation */
@@ -43,7 +46,11 @@ export const Backdrop = ({
   return (
     <>
       {doShow && (
-        <StyledBackdrop onClick={onClick} blur={blur} style={{ animation }}>
+        <StyledBackdrop
+          onClick={onClick}
+          blur={blur}
+          style={{ animation, ...style }}
+        >
           {children}
         </StyledBackdrop>
       )}

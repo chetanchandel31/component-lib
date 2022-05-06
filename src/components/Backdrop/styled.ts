@@ -10,6 +10,7 @@ export const StyledBackdrop = styled.div<StyledBackdropProps>`
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 19;
 
   background-color: ${(props) => props.theme.colors.disabled.dark};
   backdrop-filter: blur(${(props) => props.blur}px);
