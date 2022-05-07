@@ -9,6 +9,7 @@ import {
 import { Text } from "../Typography/Typography";
 
 type BaseInputProps = {
+  autoFocus?: boolean;
   className?: string;
   disabled?: boolean;
   name?: string;
@@ -33,6 +34,7 @@ export type HakiInputProps = {
 } & BaseInputProps;
 
 export const Input = ({
+  autoFocus,
   className,
   disabled = false,
   error = false,
@@ -53,6 +55,7 @@ export const Input = ({
     <StyledInputContainer fullWidth={fullWidth}>
       <StyledInput
         className={className}
+        autoFocus={autoFocus}
         disabled={disabled}
         error={error}
         placeholder={placeholder}
