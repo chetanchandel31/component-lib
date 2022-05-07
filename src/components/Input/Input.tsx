@@ -1,4 +1,9 @@
-import React, { ChangeEventHandler, CSSProperties, ReactNode } from "react";
+import React, {
+  ChangeEventHandler,
+  CSSProperties,
+  KeyboardEventHandler,
+  ReactNode,
+} from "react";
 import { Size } from "../../theme/theme";
 import {
   StyledInput,
@@ -14,6 +19,7 @@ type BaseInputProps = {
   disabled?: boolean;
   name?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   style?: CSSProperties;
   placeholder?: string;
   required?: boolean;
@@ -44,6 +50,7 @@ export const Input = ({
   leftAdornment,
   name,
   onChange,
+  onKeyDown,
   placeholder,
   required = false,
   rightAdornment,
@@ -66,6 +73,7 @@ export const Input = ({
         type={type}
         value={value}
         onChange={onChange}
+        onKeyDown={onKeyDown}
         leftAdornment={leftAdornment}
         rightAdornment={rightAdornment}
       />
