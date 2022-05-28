@@ -50,9 +50,15 @@ export const Card = ({
   maxWidth,
   style,
   variant = "outlined",
+  ...restProps
 }: HakiCardProps) => {
   return (
-    <StyledCardContainer maxWidth={maxWidth} style={style} variant={variant}>
+    <StyledCardContainer
+      maxWidth={maxWidth}
+      style={style}
+      variant={variant}
+      {...restProps}
+    >
       {children}
     </StyledCardContainer>
   );
